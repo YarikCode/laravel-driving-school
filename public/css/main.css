@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Inter-Light;
+    src: url("../fonts/Inter-Light.ttf");
+}
+
+@font-face {
+    font-family: Inter-Bold;
+    src: url("../fonts/Inter-Bold.ttf");
+}
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url("../fonts/Inter-Medium.ttf");
+}
+
+.title{
+    font-family: Inter-Bold;
+}
+
+.text{
+    font-family: Inter-Light;
+}
+
+.custom_button{
+    background-color: rgb(255, 41, 41);
+    color: white;
+    font-family: Inter-Light;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.custom_button:hover{
+    background-color: rgb(0, 160, 0);
+}

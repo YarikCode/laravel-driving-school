@@ -9,6 +9,8 @@ use App\Models\Group;
 use App\Models\User;
 use App\Models\DrivingLesson;
 use App\Models\TheoreticalLesson;
+use App\Models\Usluga;
+use App\Models\Application;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -66,6 +68,19 @@ class DatabaseSeeder extends Seeder
         $groups = ['1', '2', '3'];
         for($i = 0; $i < count($names); $i++){
             TheoreticalLesson::create(['name' => $names[$i], 'teacher_id' => $teacher, 'date' => $dates[$i], 'time' => $times[$i], 'group_id' => $groups[$i]]);
+        }
+
+        $names = ['Обучение категории A', 'Обучение категории B'];
+        $descriptions = ['Обучение категории A', 'Обучение категории B'];
+        $prices = ['21000', '37000'];
+        for($i = 0; $i < count($names); $i++){
+            Usluga::create(['name' => $names[$i], 'description' => $descriptions[$i], 'price' => $prices[$i]]);
+        }
+
+        $users_id = ['1', '2'];
+        $uslugi_id = ['1', '2'];
+        for($i = 0; $i < count($users_id); $i++){
+            Application::create(['user_id' => $users_id[$i], 'usluga_id' => $uslugi_id[$i]]);
         }
     }
 }
