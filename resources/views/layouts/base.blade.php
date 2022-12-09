@@ -19,14 +19,26 @@
             <li class="nav-item"><a href="/home" class="nav-link link-dark px-2">Мои заявки</a></li>
           </ul>
           <ul class="nav">
+            @guest
             <li class="nav-item"><a href="{{route('login')}}" class="nav-link link-dark px-2">Вход</a></li>
             <li class="nav-item"><a href="{{route('register')}}" class="nav-link link-dark px-2">Регистрация</a></li>
-            <li class="nav-item">
-                <form action="{{route('logout')}}">
-                    @csrf
-                    <input type="submit" value="Выход" class="custom_button">
-                </form>
-            </li>
+            @endguest
+            @auth
+            <div class="flex-shrink-0 dropdown d-flex align-items-center">
+              <p class="text">{{Auth::user()->name}}</p>
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
+                <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
+                <li><a class="dropdown-item" href="#">Обучение</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><form action="{{route('logout')}}" method="POST">
+                  <input type="submit" value="Выход" class="dropdown-item">
+                </form></li>
+              </ul>
+            </div>
+            @endauth
           </ul>
         </div>
       </nav>
