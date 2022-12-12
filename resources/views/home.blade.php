@@ -1,23 +1,20 @@
 @extends('layouts.base')
 
 @section('main')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+    <div class="container container-fluid">
+        <h2 class="title">Ваши заявки:</h2>
+        <br>
+        @foreach ($applications as $application)
+            @if ($application->id == Auth::user()->id)
+                <div class="row">
+                    <h2 class="Заявка на обучение"></h1>
+                    <p class="text">Номер заявки: {{$application->id}}</h3>
+                    <p class="text">Наименование услуги: {{$application->usluga->name}}</p>
+                    <p class="text">Пользователь: {{$application->user->name}}</p>
+                    <p class="text">Статус заявки: {{$application->status}}</p>
+                    <br>
                 </div>
-            </div>
-        </div>
+            @endif
+        @endforeach
     </div>
-</div>
 @endsection
