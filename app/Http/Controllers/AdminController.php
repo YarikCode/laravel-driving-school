@@ -22,9 +22,4 @@ class AdminController extends Controller
             return redirect()->route('login');
         } 
     }
-
-    public function showUsl(){
-        $context = ['uslugi' => Usluga::latest()->get()];
-        return view('uslugi', $context);
-    }
 }

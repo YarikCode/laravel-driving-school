@@ -16,7 +16,9 @@
         <div class="container d-flex flex-wrap">
           <ul class="nav me-auto">
             <li class="nav-item"><a href="/" class="nav-link link-dark px-2 active text" aria-current="page">Главная</a></li>
+            @auth
             <li class="nav-item"><a href="/home" class="nav-link link-dark px-2 text">Мои заявки</a></li>
+            @endauth
           </ul>
           <ul class="nav">
             @guest
@@ -32,7 +34,6 @@
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
                   <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
                   <li><a class="dropdown-item" href="#">Обучение</a></li>
-                  <li><a class="dropdown-item" href="{{route('app.add')}}">Оставить заявку</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><form action="{{route('logout')}}" method="POST">
                     @csrf

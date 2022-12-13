@@ -15,7 +15,7 @@
     <div class="container-fluid row">
         <div class="col-xs-12 col-md-3 admin_panel">
             <div class="d-flex p-3" style="border-bottom: 1px solid rgb(145, 145, 145)">
-                <img src="/img/user.png" height="50" width="50">
+                <img src="/storage/uploads/user.png" height="50" width="50">
                 <div class="ms-2">
                     <p class="text mb-1" style="color: rgb(145, 145, 145)">Добро пожаловать,</p>
                     <h5 class="text" style="color: rgb(207, 207, 207)">{{Auth::user()->name}}</h5>
@@ -27,7 +27,7 @@
                     <nav>
                         <ul style="list-style-type: none">
                             <li class="text admin_menu_li pt-1 pb-1"><a href="/" class="admin_menu_href">Главная</a></li>
-                            <li class="text admin_menu_li pt-1 pb-1"><a href="#" class="admin_menu_href">Заявки</a></li>
+                            <li class="text admin_menu_li pt-1 pb-1"><a href="{{route('admin.app')}}" class="admin_menu_href">Заявки</a></li>
                             <li class="text admin_menu_li pt-1 pb-1"><a href="{{route('admin.usl')}}" class="admin_menu_href">Услуги</a></li>
                         </ul>
                     </nav>

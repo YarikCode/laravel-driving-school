@@ -30,7 +30,7 @@ class HomeController extends Controller
                 return redirect()->route('admin');
             }
             else{
-                $context = ['applications' => Application::latest()->where('id', Auth::user()->id)->get()];
+                $context = ['applications' => Application::latest()->where('user_id', Auth::user()->id)->get()];
                 return view('home', $context); 
             }
         } 

@@ -10,4 +10,6 @@ class Usluga extends Model
     use HasFactory;
 
     protected $table = 'uslugi';
+
+    protected $fillable = ['name', 'description', 'image', 'price'];
 }
