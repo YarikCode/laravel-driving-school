@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -15,8 +15,8 @@
     <nav class="py-2 bg-light border-bottom">
         <div class="container d-flex flex-wrap">
           <ul class="nav me-auto">
-            <li class="nav-item"><a href="/" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
-            <li class="nav-item"><a href="/home" class="nav-link link-dark px-2">Мои заявки</a></li>
+            <li class="nav-item"><a href="/" class="nav-link link-dark px-2 active text" aria-current="page">Главная</a></li>
+            <li class="nav-item"><a href="/home" class="nav-link link-dark px-2 text">Мои заявки</a></li>
           </ul>
           <ul class="nav">
             @guest
@@ -32,6 +32,7 @@
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
                   <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
                   <li><a class="dropdown-item" href="#">Обучение</a></li>
+                  <li><a class="dropdown-item" href="{{route('app.add')}}">Оставить заявку</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><form action="{{route('logout')}}" method="POST">
                     @csrf

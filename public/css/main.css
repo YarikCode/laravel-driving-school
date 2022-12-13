@@ -35,3 +35,18 @@
 .custom_button:hover{
     background-color: rgb(0, 160, 0);
 }
+
+.admin_panel{
+    background-color: rgb(55, 77, 79);
+    min-height: 100vh;
+}
+
+.admin_menu_href{
+    color: rgb(207, 207, 207);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.admin_menu_href:hover{
+    color: white;
+}

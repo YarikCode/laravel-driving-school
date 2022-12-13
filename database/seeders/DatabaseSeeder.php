@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         $user_emails = ['ivanov@mail.ru', 'venyabatuev@mail.ru', 'kalash@mail.ru', 'snezhan123@mail.ru'];
         $password = Hash::make('user');
         $user_numbers = ['+7 (918) 345-78-13', '+7 (964) 190-87-13', '+7 (918) 156-01-15', '+7 (918) 156-01-15'];
-        $user_statuses = ['Новый пользователь', 'Новый пользователь', 'Инструктор', 'Преподаватель'];
+        $user_statuses = ['Admin', 'Новый пользователь', 'Инструктор', 'Преподаватель'];
         for($i = 0; $i < count($user_names); $i++){
             User::create(['name' => $user_names[$i], 'email' => $user_emails[$i], 'password' => $password, 'number' => $user_numbers[$i], 'status' => $user_statuses[$i]]);
         }

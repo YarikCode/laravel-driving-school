@@ -4,7 +4,7 @@
 
 @section('main')
     <div class="container">
-        <div class="row mt-3 border border-3 p-3 rounded">
+        <div class="row mt-3 border border-1 p-3 rounded">
             <div class="col-3"><img src="./img/moto.jpg" class="rounded" width="100%" height="auto" alt=""></div>
             <div class="col-5">
                 <h1 class="title">Категория A</h1>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3 border border-3 p-3 rounded">
+        <div class="row mt-3 border border-1 p-3 rounded">
             <div class="col-3"><img src="./img/avto.jpg" class="rounded" width="100%" height="auto" alt=""></div>
             <div class="col-5">
                 <h1 class="title">Категория B</h1>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3 border border-3 p-3 rounded">
+        <div class="row mt-3 border border-1 p-3 rounded">
             <div class="col-3"><img src="./img/znak.jpg" class="rounded" width="100%" height="auto" alt=""></div>
             <div class="col-5">
                 <h1 class="title">Восстановление навыков</h1>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/home/add', [ApplicationController::class, 'showAddAppForm'])->name('app.add');
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('admin');
+Route::get('/admin/usl', [AdminController::class, 'showUsl'])->name('admin.usl')->middleware('admin');
+
 Auth::routes();
 
-Route::get('/home', [ApplicationController::class, 'applications'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Application;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
-    public function applications(){
-        $context = ['applications' => Application::latest()->get()];
-        return view('home', $context);
+    public function showAddAppForm(){
+        return view('add_app');
     }
 }

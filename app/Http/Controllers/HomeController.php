@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Application;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(Auth::check()){
+            if(Auth::user()->status === 'Admin'){
+                return redirect()->route('admin');
+            }
+            else{
+                $context = ['applications' => Application::latest()->where('id', Auth::user()->id)->get()];
+                return view('home', $context); 
+            }
+        } 
+        else{
+            return redirect()->route('login');
+        } 
     }
 }
