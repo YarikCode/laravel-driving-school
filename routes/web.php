@@ -31,16 +31,18 @@ Route::patch('/admin/{app}', [ApplicationController::class, 'updateApp'])->name(
 
 // Админ-панель
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('admin');
-
-// Услуги
 Route::get('/admin/usl', [UslugaController::class, 'showUsl'])->name('admin.usl')->middleware('admin');
+
 Route::get('/admin/usl/add', [UslugaController::class, 'showAddUslForm'])->name('admin.usl.add')->middleware('admin');
-Route::post('/admin/usl', [UslugaController::class, 'storeUsl'])->name('usl.store')->middleware('admin');
+Route::post('/admin/usl/add', [UslugaController::class, 'storeUsl'])->name('usl.store')->middleware('admin');
+
 Route::get('/admin/usl/{usl}/edit', [UslugaController::class, 'showEditUslForm'])->name('usl.edit')->middleware('admin');
-Route::patch('/admin/{usl}', [UslugaController::class, 'updateUsl'])->name('usl.update')->middleware('admin');
+Route::patch('/admin/usl/{usl}/edit', [UslugaController::class, 'updateUsl'])->name('usl.update')->middleware('admin');
+
 Route::get('/admin/usl/{usl}/delete', [UslugaController::class, 'showDeleteUslForm'])->name('usl.delete')->middleware('admin');
 Route::delete('/admin/{usl}', [UslugaController::class, 'destroyUsl'])->name('usl.destroy')->middleware('admin');
 
+// Услуги
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

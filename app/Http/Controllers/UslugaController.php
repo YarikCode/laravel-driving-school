@@ -45,7 +45,8 @@ class UslugaController extends Controller
         $tmp = $image->storeAs('uploads', $filename, 'public');
         $usl->fill(['name' => $request->name, 
                     'description' => $request->description,
-                    'price' => $request->price]);
+                    'price' => $request->price,
+                    'image' => $filename]);
         $usl->save();
         return redirect()->route('admin.usl');
     }
@@ -58,6 +59,7 @@ class UslugaController extends Controller
         $filename = time()."_". preg_replace('/\s+/', '_', strtolower($image->getClientOriginalName()));
         $tmp = $image->storeAs('uploads', $filename, 'public');
         Usluga::create(['name' => $request->name, 'description' => $request->description, 'price' => $request->price, 'image' => $filename]);
+        dd($request->file);
         return redirect()->route('admin.usl');
     }
 }

@@ -3,7 +3,8 @@
 @section('title', 'Добавление услуги')
 
 @section('main')
-    <form class="border border-1 p-3 rounded" action="{{route('usl.store')}}" method="POST" enctype="multipart/form-data">
+    <form class="border border-1 p-3 rounded" action="{{ route('usl.store' )}}" method="POST" enctype="multipart/form-data">
+        @csrf
         <h2 class="text">Добавление услуги</h2>
         <div class="form-group">
             <label for="exampleInputEmail1">Название услуги</label>
@@ -21,7 +22,6 @@
             <label for="exampleInputPassword1">Изображение</label>
             <input type="file" class="form-control" id="exampleInputPassword1" placeholder="Выберите изображение" name="File">
         </div>
-        <button type="submit" class="btn btn-primary">Добавить</button>
-        @csrf
+        <button type="submit" class="btn btn-primary">Добавить</button>    
     </form>
 @endsection
