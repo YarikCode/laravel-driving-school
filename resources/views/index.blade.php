@@ -24,7 +24,7 @@
     </div>
     <div class="container-fluid d-flex flex-column justify-content-center all_height_image" style='background-image: url("/img/background_image.jpg");'>
         <div class="container d-flex flex-column gap-4">
-            <p class="montserrat_light media_tex block_title" style="color: white;">Качество</p>
+            <h1 class="montserrat_light media_tex block_title" style="color: white;">Качество</h1>
             <p class="montserrat_extraLight media_text" style="color: white; font-size: 20px;">Мы подготовили для вас комфортные условия для обучения и разработали несколько курсов с максимально выгодными ценами.</p>
             <p class="montserrat_bold media_text" style="color: white; font-size: 18px;">Во все программы включены: полный теоретический курс по ПДД, вождение с инструктором (преодоление препятствий на автодроме и езда по городу), ГСМ, топливо, сбор всей необходимой документации для ГИБДД, предоставление автомобилей на экзамен и сопровождение ученика сотрудниками автошколы.</p>
         </div>
@@ -32,7 +32,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col d-flex flex-column justify-content-center p-5">
-                <p class="montserrat_light media_text block_title">Вас будет учить лучший инструктор</p>
+                <h1 class="montserrat_light block_title">Вас будет учить лучший инструктор</h1>
                 <div class="d-flex flex-column">
                     <p class="montserrat_bold mb-1" style="font-size: 20px;">Инструкторы европейского уровня</p>
                     <p class="montserrat_light" style="font-size: 18px;">Наши инструкторы ежегодно подтверждают и повышают свою квалификацию. Сами они проходят обучение у лучших тренеров России и Европы, а также регулярно сдают экзамены по ПДД.</p>
@@ -47,6 +47,34 @@
                 </div>
             </div>
             <div class="col all_height_image" style='background-image: url("/img/background_image_2.jpg");'></div>
+        </div>
+    </div>
+    <div class="container-fluid footer pt-4 pb-4">
+        <div class="container">
+            <h1 class="montserrat_bold" style="color: white">Контакты</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-4">
+                        <p class="montserrat_light mb-1" style="color: gray">ТЕЛЕФОН:</p>
+                        <p class="montserrat_light" style="color: white">+7 (964) 922-38-71</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="montserrat_light mb-1" style="color: gray">ЭЛ. АДРЕС:</p>
+                        <p class="montserrat_light" style="color: white">drivermaster@mail.ru</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="montserrat_light mb-1" style="color: gray">ОТДЕЛ ПРОДАЖ:</p>
+                        <p class="montserrat_light" style="color: white">г. Ейск, ул. Мичурина, 22</p>
+                    </div>
+                </div>
+                <div class="col">
+                        <div class="mb-4">
+                            <p class="montserrat_light mb-1" style="color: gray">ГРАФИК РАБОТЫ:</p>
+                            <p class="montserrat_light" style="color: white">пн-пт: 8:00 - 18:00 <br> сб: 9:00 - 17:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection('main')

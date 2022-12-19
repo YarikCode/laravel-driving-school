@@ -16,7 +16,7 @@ class UslugaController extends Controller
 
     public function showPublicUsl(){
         $context = ['uslugi' => Usluga::latest()->get()];
-        return view('index', $context);
+        return view('public_usl', $context);
     }
 
     public function showAddUslForm(){
@@ -59,7 +59,6 @@ class UslugaController extends Controller
         $filename = time()."_". preg_replace('/\s+/', '_', strtolower($image->getClientOriginalName()));
         $tmp = $image->storeAs('uploads', $filename, 'public');
         Usluga::create(['name' => $request->name, 'description' => $request->description, 'price' => $request->price, 'image' => $filename]);
-        dd($request->file);
         return redirect()->route('admin.usl');
     }
 }

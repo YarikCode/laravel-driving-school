@@ -3,7 +3,7 @@
 @section('title', 'Удаление заявки')
 
 @section('main')
-    <form class="container border border-1 p-3 rounded" action="{{route('app.destroy', ['app' => $app->id])}}" method="POST">
+    <form class="container content_block p-3" action="{{route('app.destroy', ['app' => $app->id])}}" method="POST">
         @csrf
         @method('DELETE')
         <h2 class="text mb-4">Удаление заявки</h2>

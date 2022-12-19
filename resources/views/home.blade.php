@@ -4,7 +4,7 @@
     <div class="container container-fluid">
         <div class="container container-fluid">
             @foreach ($applications as $application)
-                <div class="border border-1 p-3 mb-2 rounded">
+                <div class="border content_block p-3 mb-2 ">
                     <div class="d-flex justify-content-between mb-3">
                         <h2 class="text">Заказ услуги</h2>
                         <a href="{{route('app.delete', ['app' => $application->id])}}">Отменить заявку</a>

@@ -26,13 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::check()){
-            if(Auth::user()->status === 'Admin'){
-                return redirect()->route('admin');
-            }
-            else{
-                $context = ['applications' => Application::latest()->where('user_id', Auth::user()->id)->get()];
-                return view('home', $context); 
-            }
+            $context = ['applications' => Application::latest()->where('user_id', Auth::user()->id)->get()];
+            return view('home', $context); 
         } 
         else{
             return redirect()->route('login');
