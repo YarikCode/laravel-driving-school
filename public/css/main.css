@@ -1,52 +1,121 @@
 @font-face {
     font-family: Inter-Light;
-    src: url("../fonts/Inter-Light.ttf");
+    src: url("/fonts/Inter-Light.ttf");
 }
 
 @font-face {
     font-family: Inter-Bold;
-    src: url("../fonts/Inter-Bold.ttf");
+    src: url("/fonts/Inter-Bold.ttf");
 }
 
 @font-face {
     font-family: Inter-Medium;
-    src: url("../fonts/Inter-Medium.ttf");
+    src: url("/fonts/Inter-Medium.ttf");
 }
 
-.title{
-    font-family: Inter-Bold;
+@font-face {
+    font-family: Montserrat-Light;
+    src: url("/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url("/fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-ExtraLight;
+    src: url("/fonts/Montserrat-ExtraLight.ttf");
 }
 
 .text{
     font-family: Inter-Light;
 }
 
-.custom_button{
-    background-color: rgb(255, 41, 41);
-    color: white;
-    font-family: Inter-Light;
-    border: none;
-    padding: 10px 25px 10px 25px;
-    border-radius: 30px;
-    font-size: 18px;
-    transition: background-color 0.3s;
+.light_text{
+    font-family: Montserrat-ExtraLight;
 }
 
-.custom_button:hover{
-    background-color: rgb(0, 160, 0);
+.title{
+    font-family: Inter-Bold;
 }
 
-.admin_panel{
-    background-color: rgb(55, 77, 79);
+.montserrat_light{
+    font-family: Montserrat-Light;
+}
+
+.montserrat_bold{
+    font-family: Montserrat-Bold;
+}
+
+.montserrat_extraLight{
+    font-family: Montserrat-ExtraLight;
+}
+
+.index_image{
+    background-size: cover;
+    height: 250px;
+    background-position: center;
+}
+
+.col_index_image{
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+}
+
+.all_height_image{
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+.media_text{
+    max-width: 40%;
+}
+
+.header{
+    background-color: rgb(255, 255, 255);
+}
+
+.content{
+    background-color: rgb(231, 231, 231);
     min-height: 100vh;
 }
 
-.admin_menu_href{
-    color: rgb(207, 207, 207);
-    text-decoration: none;
-    transition: color 0.3s;
+.content_block{
+    background-color: rgb(255, 255, 255);
 }
 
-.admin_menu_href:hover{
+.home_user_image{
+    width: 250px;
+    height: 250px;
+    border-radius: 100px;
+}
+
+.custom_button{
+    font-family: Montserrat-Light;
     color: white;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(142, 90, 166);
+    border: none;
+    border-radius: 30px;
+}
+
+.white_custom_button{
+    font-family: Montserrat-Bold;
+    color: rgb(142, 90, 166);
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    border: 1px solid rgb(142, 90, 166);
+    border-radius: 30px;
+}
+
+@media (max-width: 767.98px){ 
+    .media_text{
+        max-width: 95%;
+    }
+    .block_title{
+        font-size: 30px;
+    }
 }
