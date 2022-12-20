@@ -9,6 +9,27 @@ use Illuminate\Support\Facades\Storage;
 
 class UslugaController extends Controller
 {
+    private const USL_VALIDATOR = [
+        'name' => 'required|max:255',
+        'description' => 'required|max:255',
+        'price' => 'required|numeric',
+        'image' => 'mimes:jpeg,bmp,png'
+    ];
+
+    private const USL_NO_IMAGE_VALIDATOR = [
+        'name' => 'required|max:255',
+        'description' => 'required|max:255',
+        'price' => 'required|numeric'
+    ];
+
+    private const USL_ERROR_MESSAGES = [
+        'price.required' => 'Раздавать услуги бесплатно нельзя',
+        'required' => 'Заполните это поле',
+        'max' => 'Значение не должно быть длиннее :max символов',
+        'numeric' => 'Введите число',
+        'mimes' => 'Выберите файл формата: jpeg, bmp, png'
+    ];
+
     public function showUsl(){
         $context = ['uslugi' => Usluga::latest()->get()];
         return view('uslugi', $context);
@@ -18,7 +39,6 @@ class UslugaController extends Controller
         $context = ['uslugi' => Usluga::latest()->get()];
         return view('public_usl', $context);
     }
-
     public function showAddUslForm(){
         return view('usl_add');
     }
@@ -37,28 +57,32 @@ class UslugaController extends Controller
     }
 
     public function updateUsl(Request $request, Usluga $usl){
-        $this->validate($request, [
-            'File' => ['required', 'mimes:jpeg,gif,bmp,png', 'max:2048']
-        ]);
-        $image = $request->file('File');
-        $filename = time()."_". preg_replace('/\s+/', '_', strtolower($image->getClientOriginalName()));
-        $tmp = $image->storeAs('uploads', $filename, 'public');
-        $usl->fill(['name' => $request->name, 
-                    'description' => $request->description,
-                    'price' => $request->price,
-                    'image' => $filename]);
+        if($request->file('image') != null){
+            $validated = $request->validate(self::USL_VALIDATOR, self::USL_ERROR_MESSAGES);
+            $image = $request->file('image');
+            $filename = time()."_". preg_replace('/\s+/', '_', strtolower($image->getClientOriginalName()));
+            $tmp = $image->storeAs('uploads', $filename, 'public');
+            $usl->fill(['name' => $validated['name'], 
+                        'description' => $validated['description'],
+                        'price' => $validated['price'],
+                        'image' => $filename]);
+        }
+        else{
+            $validated = $request->validate(self::USL_NO_IMAGE_VALIDATOR, self::USL_ERROR_MESSAGES);
+            $usl->fill(['name' => $validated['name'], 
+                        'description' => $validated['description'],
+                        'price' => $validated['price']]);
+        }
         $usl->save();
         return redirect()->route('admin.usl');
     }
 
     public function storeUsl(Request $request){
-        $this->validate($request, [
-            'File' => ['required', 'mimes:jpeg,gif,bmp,png', 'max:2048']
-        ]);
-        $image = $request->file('File');
+        $validated = $request->validate(self::USL_VALIDATOR, self::USL_ERROR_MESSAGES);
+        $image = $request->file('image');
         $filename = time()."_". preg_replace('/\s+/', '_', strtolower($image->getClientOriginalName()));
         $tmp = $image->storeAs('uploads', $filename, 'public');
-        Usluga::create(['name' => $request->name, 'description' => $request->description, 'price' => $request->price, 'image' => $filename]);
+        Usluga::create(['name' => $validated['name'], 'description' => $validated['description'], 'price' => $validated['price'], 'image' => $filename]);
         return redirect()->route('admin.usl');
     }
 }

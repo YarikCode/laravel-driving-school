@@ -7,7 +7,7 @@
         @csrf
         @method('DELETE')
         <h2 class="text mb-4">Удаление заявки</h2>
-        <p class="text mb-2">Пользователь: {{Auth::user()->name}}</p>
+        <p class="text mb-2">Пользователь: {{$app->user->name}}</p>
         <p class="text">Услуга: {{$app->usluga->name}}</p>
         <button type="submit" class="btn btn-primary">Удалить</button>
     </form>

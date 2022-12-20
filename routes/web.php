@@ -29,9 +29,9 @@ Route::middleware(['user'])->group(function () {
     Route::post('/home/{usl}', [ApplicationController::class, 'storeApp'])->name('app.store');
 
     // Открыть форму удаления услуги
-    Route::get('/home/{app}/delete', [ApplicationController::class, 'showDeleteAppForm'])->name('app.delete');
-    // Удаление услуги
-    Route::delete('/home/{app}', [ApplicationController::class, 'destroyApp'])->name('app.destroy');
+    Route::get('/home/{app}/delete', [ApplicationController::class, 'showDeleteAppForm'])->name('app.delete')->middleware('can:destroy,app');
+    // Удаление заявки
+    Route::delete('/home/{app}/delete', [ApplicationController::class, 'destroyApp'])->name('app.destroy')->middleware('can:destroy,app');
 });
 
 // Админ-панель
