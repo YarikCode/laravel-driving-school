@@ -3,7 +3,7 @@
 @section('title', 'Удаление услуги')
 
 @section('main')
-    <form class="border border-1 p-3 rounded" action="{{route('usl.destroy', ['usl' => $usl->id])}}" method="POST">
+    <form class="container content_block p-3 mb-2" action="{{route('usl.destroy', ['usl' => $usl->id])}}" method="POST">
         @csrf
         @method('DELETE')
         <h2 class="text">Удаление услуги</h2>

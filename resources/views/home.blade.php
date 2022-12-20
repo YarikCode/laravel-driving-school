@@ -7,7 +7,7 @@
                 <div class="border content_block p-3 mb-2 ">
                     <div class="d-flex justify-content-between mb-3">
                         <h2 class="text">Заказ услуги</h2>
-                        <a href="{{route('app.delete', ['app' => $application->id])}}">Отменить заявку</a>
+                        <a href="{{route('app.delete', ['app' => $application->id])}}"><button class="white_custom_button">Удалить заявку</button></a>
                     </div>
                     <h4 class="text mb-4">{{$application->usluga->name}}</h4>
                     <div>

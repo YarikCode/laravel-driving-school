@@ -3,7 +3,7 @@
 @section('title', 'Редактирование заявки')
 
 @section('main')
-    <form class="border border-1 p-3 rounded" action="{{ route('update.app', ['app' => $app->id]) }}" method="POST">
+    <form class="container content_block p-3 mb-2" action="{{ route('update.app', ['app' => $app->id]) }}" method="POST">
         @csrf
         @method('PATCH')
         <h4 class="text">Редактирование статуса заявки</h4>

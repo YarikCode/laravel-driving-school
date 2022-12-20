@@ -3,7 +3,7 @@
 @section('title', 'Редактирование услуги')
 
 @section('main')
-    <form class="border border-1 p-3 rounded" action="{{route('usl.update', ['usl' => $usl->id])}}" method="POST" enctype="multipart/form-data">
+    <form class="container content_block p-3 mb-2" action="{{route('usl.update', ['usl' => $usl->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         <h2 class="text">Редактирование услуги</h2>

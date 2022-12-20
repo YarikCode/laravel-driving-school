@@ -22,9 +22,18 @@ class ApplicationController extends Controller
         return view('app_delete', ['app' => $app]);
     }
 
+    public function showAdminAppDeleteForm(Application $app){
+        return view('delete_app_admin', ['app' => $app]);
+    }
+
     public function destroyApp(Application $app){
         $app->delete();
         return redirect()->route('home');
+    }
+
+    public function destroyAppAdmin(Application $app){
+        $app->delete();
+        return redirect()->route('admin.app');
     }
 
     public function showAllAds(){

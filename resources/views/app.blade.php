@@ -4,11 +4,11 @@
     
 @section('main')
     @foreach ($applications as $application)
-        <div class="border border-1 p-3 mb-2 rounded">
+        <div class="container content_block p-3 mb-2">
             <div class="d-flex justify-content-between mb-3">
                 <h2 class="text">Заявка на обучение</h2>
                 <div class="d-flex flex-column">
-                    <a href="#">Удалить заявку</a>
+                    <a href="{{ route('app.admin.delete', ['app' => $application->id]) }}">Удалить заявку</a>
                     <a href="{{ route('status.app', ['app' => $application->id]) }}">Редактировать статуc</a>
                 </div>
             </div>

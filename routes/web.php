@@ -7,40 +7,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UslugaController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // Главная страница
 Route::get('/', function () {
     return view('index');
 })->name('index');
-
-//Заявки
-Route::get('/home/{usl}/add', [ApplicationController::class, 'showAddAppForm'])->name('app.add')->middleware('user');
-Route::post('/home/{usl}', [ApplicationController::class, 'storeApp'])->name('app.store')->middleware('user');
-Route::get('/home/{app}/delete', [ApplicationController::class, 'showDeleteAppForm'])->name('app.delete')->middleware('user');
-Route::delete('/home/{app}', [ApplicationController::class, 'destroyApp'])->name('app.destroy')->middleware('user');
-Route::get('/admin/app', [ApplicationController::class, 'showAllAds'])->name('admin.app')->middleware('admin');
-Route::get('/admin/{app}/status', [ApplicationController::class, 'showChangeStatusForm'])->name('status.app')->middleware('admin');
-Route::patch('/admin/{app}', [ApplicationController::class, 'updateApp'])->name('update.app')->middleware('admin');
-
-// Админ-панель
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('admin');
-Route::get('/admin/usl', [UslugaController::class, 'showUsl'])->name('admin.usl')->middleware('admin');
-Route::get('/admin/usl/add', [UslugaController::class, 'showAddUslForm'])->name('admin.usl.add')->middleware('admin');
-Route::post('/admin/usl/add', [UslugaController::class, 'storeUsl'])->name('usl.store')->middleware('admin');
-Route::get('/admin/usl/{usl}/edit', [UslugaController::class, 'showEditUslForm'])->name('usl.edit')->middleware('admin');
-Route::patch('/admin/usl/{usl}/edit', [UslugaController::class, 'updateUsl'])->name('usl.update')->middleware('admin');
-Route::get('/admin/usl/{usl}/delete', [UslugaController::class, 'showDeleteUslForm'])->name('usl.delete')->middleware('admin');
-Route::delete('/admin/{usl}', [UslugaController::class, 'destroyUsl'])->name('usl.destroy')->middleware('admin');
 
 // Услуги
 Route::get('/usl', [UslugaController::class, 'showPublicUsl'])->name('public.usl');
@@ -50,3 +20,53 @@ Auth::routes();
 
 // Личный кабинет
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Работа пользователя
+Route::middleware(['user'])->group(function () {
+    // Открыть форму добавления заявки
+    Route::get('/home/{usl}/add', [ApplicationController::class, 'showAddAppForm'])->name('app.add');
+    // Добавлене заявки
+    Route::post('/home/{usl}', [ApplicationController::class, 'storeApp'])->name('app.store');
+
+    // Открыть форму удаления услуги
+    Route::get('/home/{app}/delete', [ApplicationController::class, 'showDeleteAppForm'])->name('app.delete');
+    // Удаление услуги
+    Route::delete('/home/{app}', [ApplicationController::class, 'destroyApp'])->name('app.destroy');
+});
+
+// Админ-панель
+Route::middleware(['admin'])->group(function () {
+    // Открыть админ-панель
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+
+    // Открыть раздел услуги
+    Route::get('/admin/usl', [UslugaController::class, 'showUsl'])->name('admin.usl');
+ 
+    // Открыть форму добавления услуги
+    Route::get('/admin/usl/add', [UslugaController::class, 'showAddUslForm'])->name('admin.usl.add');
+    // Добавиить услугу
+    Route::post('/admin/usl/add', [UslugaController::class, 'storeUsl'])->name('usl.store');
+
+    // Открыть форму редактирования услуги
+    Route::get('/admin/usl/{usl}/edit', [UslugaController::class, 'showEditUslForm'])->name('usl.edit');
+    // Обновление услуги
+    Route::patch('/admin/usl/{usl}/edit', [UslugaController::class, 'updateUsl'])->name('usl.update');
+
+    // Открыть форму удаления услуги
+    Route::get('/admin/usl/{usl}/delete', [UslugaController::class, 'showDeleteUslForm'])->name('usl.delete');
+    // Удаление услуги
+    Route::delete('/admin/{usl}', [UslugaController::class, 'destroyUsl'])->name('usl.destroy');
+
+    // Открыть раздел заявки
+    Route::get('/admin/app', [ApplicationController::class, 'showAllAds'])->name('admin.app')->middleware('admin');
+
+    // Открыть форму редактирования статуса заявки
+    Route::get('/admin/{app}/status', [ApplicationController::class, 'showChangeStatusForm'])->name('status.app')->middleware('admin');
+    // Редактировать статус заявки
+    Route::patch('/admin/{app}', [ApplicationController::class, 'updateApp'])->name('update.app')->middleware('admin');
+
+    // Открыть форму удаления заявки
+    Route::get('/admin/app/{app}/delete', [ApplicationController::class, 'showAdminAppDeleteForm'])->name('app.admin.delete');
+    // Удаление заявки
+    Route::delete('/admin/app/{app}/destroy', [ApplicationController::class, 'destroyAppAdmin'])->name('app.admin.destroy');
+});

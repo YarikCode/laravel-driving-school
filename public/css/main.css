@@ -78,6 +78,10 @@
     background-color: rgb(255, 255, 255);
 }
 
+.admin_header{
+    background-color: rgb(33, 37, 41);
+}
+
 .footer{
     background-color: rgb(34, 34, 34);
 }
@@ -113,6 +117,11 @@
     background-color: white;
     border: 1px solid rgb(142, 90, 166);
     border-radius: 30px;
+}
+
+.admin_header_text{
+    color: white;
+    font-family: Montserrat-Light;
 }
 
 @media (max-width: 767.98px){ 

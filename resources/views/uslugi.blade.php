@@ -3,7 +3,7 @@
 @section('title', 'Услуги')
     
 @section('main')
-    <div class="header">
+    <div class="container content_block p-3 mb-2">
         <nav>
             <ul style="list-style-type: none" class="p-0 m-0 mb-2">
                 <li><a class="btn btn-success" href="{{route('admin.usl.add')}}">Добавить</a></li>
@@ -11,7 +11,7 @@
         </nav>
     </div>
     @foreach ($uslugi as $usluga)
-    <div class="border border-1 p-3 mb-2 rounded">
+    <div class="container content_block p-3 mb-2">
         <div class="d-flex justify-content-between mb-3">
             <h2 class="text">{{$usluga->name}}</h2>
             <div class="d-flex flex-column">
