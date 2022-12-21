@@ -15,7 +15,7 @@
                     <h5 class="montserrat_light">{{ $usluga->description }}</h2>
                 </div>
                 <div class="col">
-                    <h1 class="montserrat_light d-flex justify-content-beetwen">{{ $usluga->price }}</h1>
+                    <h1 class="montserrat_bold d-flex justify-content-beetwen">{{ $usluga->price }} ₽</h1>
                     <a href="{{ route('app.add', ['usl' => $usluga->id ]) }}">
                         <button class="custom_button">Записаться</button>
                     </a>

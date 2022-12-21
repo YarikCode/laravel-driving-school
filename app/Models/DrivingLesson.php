@@ -10,4 +10,12 @@ use App\Models\User;
 class DrivingLesson extends Model
 {
     use HasFactory;
+
+    public function student(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function instructor(){
+        return $this->belongsTo(User::class);
+    }
 }

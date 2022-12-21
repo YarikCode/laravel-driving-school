@@ -51,6 +51,8 @@ class DatabaseSeeder extends Seeder
             User::create(['name' => $user_names[$i], 'email' => $user_emails[$i], 'password' => $password, 'number' => $user_numbers[$i], 'status' => $user_statuses[$i]]);
         }
 
+        User::create(['name' => 'Петров Петр Петрович', 'email' => 'petrowpetya@mail.ru', 'password' => $password, 'number' => '+7 (964) 922-38-71', 'status' => 'Новый пользователь', 'group_id' => '1']);
+
         $names = ['Выполнение упражнения "Параллельная праковка задним ходом"', 'Учебное вождение в городе'];
         $students = ['1', '2'];
         $instructor = '3';
