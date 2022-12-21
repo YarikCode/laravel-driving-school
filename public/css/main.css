@@ -124,11 +124,36 @@
     font-family: Montserrat-Light;
 }
 
+.media_title{
+    font-size: 50px;
+}
+
 @media (max-width: 767.98px){ 
     .media_text{
         max-width: 95%;
     }
     .block_title{
         font-size: 30px;
+    }
+    .media_title{
+        font-size: 30px;
+    }
+    .header_text{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .media_title{
+        font-size: 25px;
+    }
+    .custom_button{
+        font-size: 10px;
+    }
+    .white_custom_button{
+        font-size: 10px;
+    } 
+    .action_text{
+        font-size: 12px;
     }
 }

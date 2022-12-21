@@ -15,8 +15,8 @@
         <div class="d-flex justify-content-between mb-3">
             <h2 class="text">{{$usluga->name}}</h2>
             <div class="d-flex flex-column">
-                <a href="{{route('usl.edit', ['usl' => $usluga->id])}}">Редактировать услугу</a>
-                <a href="{{route('usl.delete', ['usl' => $usluga->id])}}">Удалить услугу</a>
+                <a class="action_text" href="{{route('usl.edit', ['usl' => $usluga->id])}}">Редактировать услугу</a>
+                <a class="action_text" href="{{route('usl.delete', ['usl' => $usluga->id])}}">Удалить услугу</a>
             </div>
         </div>
         <h4 class="text mb-4">{{$usluga->name}}</h4>

@@ -17,24 +17,24 @@
         <nav class="py-2">
             <div class="container d-flex flex-wrap">
               <ul class="nav me-auto">
-                <li class="nav-item montserrat_light"><a href="{{ route('admin.usl') }}" class="nav-link text-white px-2 active" aria-current="page">Услуги</a></li>
-                <li class="nav-item montserrat_light"><a href="{{ route('admin.app') }}" class="nav-link text-white px-2 active" aria-current="page">Заявки</a></li>
+                <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.usl') }}" class="nav-link text-white px-2 active" aria-current="page">Услуги</a></li>
+                <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.app') }}" class="nav-link text-white px-2 active" aria-current="page">Заявки</a></li>
               </ul>
               <ul class="nav d-flex align-items-center">
                 @guest
-                  <li class="nav-item montserrat_light"><a href="{{ route('login') }}" class="nav-link text-white px-2">Войти</a></li>
-                  <li class="nav-item montserrat_light"><a href="{{ route('register') }}" class="nav-link text-white px-2">Зарегистрироваться</a></li>
+                  <li class="nav-item header_text montserrat_light"><a href="{{ route('login') }}" class="nav-link text-white px-2">Войти</a></li>
+                  <li class="nav-item header_text montserrat_light"><a href="{{ route('register') }}" class="nav-link text-white px-2">Зарегистрироваться</a></li>
                 @endguest
                 @auth
-                  <div class="dropdown text-end d-flex align-items-center">
-                    <p class="montserrat_light text-white m-0 me-2">{{ Auth::user()->name }}</p>
+                  <div class="ps-2 dropdown text-end d-flex align-items-center">
+                    <p class="montserrat_light header_text text-white m-0 me-2">{{ Auth::user()->name }}</p>
                     <a href="#" class="d-block text-white text-decoration-none dropdown-toggle show" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="true">
                       <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-110px, 34px);">
                       <li><a class="dropdown-item text" href="{{ route('home') }}">Личный кабинет</a></li>
-                      <li><a class="dropdown-item text" href="#">Главная</a></li>
-                      <li><a class="dropdown-item text" href="#">Услуги</a></li>
+                      <li><a class="dropdown-item text" href="{{ route('index') }}">Главная</a></li>
+                      <li><a class="dropdown-item text" href="{{ route('public.usl') }}">Услуги</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><form action="{{ route('logout') }}" method="POST">
                         @csrf

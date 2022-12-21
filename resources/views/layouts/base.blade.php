@@ -20,20 +20,20 @@
     <nav class="py-2">
         <div class="container d-flex flex-wrap">
           <ul class="nav me-auto">
-            <li class="nav-item text"><a href="{{ route('index') }}" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
+            <li class="nav-item text header_text"><a href="{{ route('index') }}" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
             @auth
-              <li class="nav-item text"><a href="{{ route('home') }}" class="nav-link link-dark px-2">Личный кабинет</a></li>
+              <li class="nav-item text header_text"><a href="{{ route('home') }}" class="nav-link link-dark px-2">Личный кабинет</a></li>
             @endauth
-            <li class="nav-item text"><a href="{{ route('public.usl') }}" class="nav-link link-dark px-2">Услуги</a></li>
+            <li class="nav-item text header_text"><a href="{{ route('public.usl') }}" class="nav-link link-dark px-2">Услуги</a></li>
           </ul>
           <ul class="nav d-flex align-items-center">
             @guest
-              <li class="nav-item text"><a href="{{ route('login') }}" class="nav-link link-dark px-2">Войти</a></li>
-              <li class="nav-item text"><a href="{{ route('register') }}" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
+              <li class="nav-item text header_text"><a href="{{ route('login') }}" class="nav-link link-dark px-2">Войти</a></li>
+              <li class="nav-item text header_text"><a href="{{ route('register') }}" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
             @endguest
             @auth
-              <div class="dropdown text-end d-flex align-items-center">
-                <p class="text m-0 me-2">{{ Auth::user()->name }}</p>
+              <div class="ps-2 dropdown text-end d-flex align-items-center">
+                <p class="text header_text m-0 me-2">{{ Auth::user()->name }}</p>
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle show" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="true">
                   <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>

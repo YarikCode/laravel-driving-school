@@ -5,7 +5,7 @@
 @section('main')
     <div class="container p-0 pb-4 d-flex flex-column justify-content-center" style="min-height: 100vh">
         <div class="index_image d-flex align-items-center justify-content-center m-0 p-0" style='background-image: url("/img/xl.jpg");'>
-            <p class="light_text" style="color: white; font-size: 50px">Автошкола "Мастер вождения"</p>
+            <p class="light_text media_title" style="color: white;">Автошкола "Мастер вождения"</p>
         </div>
         <div class="row m-0 p-0 pt-2 gap-2">
             <div class="col col_index_image" style='background-image: url("/img/index_image_col_1.jpg")'>
@@ -31,7 +31,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col d-flex flex-column justify-content-center p-5">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-center p-5">
                 <h1 class="montserrat_light block_title">Вас будет учить лучший инструктор</h1>
                 <div class="d-flex flex-column">
                     <p class="montserrat_bold mb-1" style="font-size: 20px;">Инструкторы европейского уровня</p>
@@ -46,7 +46,7 @@
                     <p class="montserrat_light" style="font-size: 18px;">Инструкторы не «сидят» в мобильном телефоне во время проведения урока. С такими наставниками рядом не страшны даже самые сложные ситуации на дороге. Под их чутким руководством вы уверенно сможете сдать на права</p>
                 </div>
             </div>
-            <div class="col all_height_image" style='background-image: url("/img/background_image_2.jpg");'></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 all_height_image" style='background-image: url("/img/background_image_2.jpg");'></div>
         </div>
     </div>
     <div class="container-fluid footer pt-4 pb-4">

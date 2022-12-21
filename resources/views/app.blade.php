@@ -8,8 +8,8 @@
             <div class="d-flex justify-content-between mb-3">
                 <h2 class="text">Заявка на обучение</h2>
                 <div class="d-flex flex-column">
-                    <a href="{{ route('app.admin.delete', ['app' => $application->id]) }}">Удалить заявку</a>
-                    <a href="{{ route('status.app', ['app' => $application->id]) }}">Редактировать статуc</a>
+                    <a class="action_text" href="{{ route('app.admin.delete', ['app' => $application->id]) }}">Удалить заявку</a>
+                    <a class="action_text" href="{{ route('status.app', ['app' => $application->id]) }}">Редактировать статуc</a>
                 </div>
             </div>
             <h4 class="text mb-4">Заявка на обучение №{{$application->id}}</h4>
