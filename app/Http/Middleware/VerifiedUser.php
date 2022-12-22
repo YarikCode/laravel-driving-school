@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckAdmin
+class VerifiedUser
 {
     /**
      * Handle an incoming request.
@@ -17,16 +17,11 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
-            if(Auth::user()->status === 'Admin'){
-                return $next($request);
-            }
-            else{
-                abort(404, 'Custom error message');
-            }
+        if(Auth::user()->group_id != null){
+            return $next($request);
         }
         else{
-            return redirect('login');
+            abort(404, 'Custom error message');
         }
     }
 }

@@ -21,10 +21,13 @@
         <div class="container d-flex flex-wrap">
           <ul class="nav me-auto">
             <li class="nav-item text header_text"><a href="{{ route('index') }}" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
+            <li class="nav-item text header_text"><a href="{{ route('public.usl') }}" class="nav-link link-dark px-2">Услуги</a></li>
             @auth
               <li class="nav-item text header_text"><a href="{{ route('home') }}" class="nav-link link-dark px-2">Личный кабинет</a></li>
+              @if (Auth::user()->group_id != null)
+                <li class="nav-item text header_text"><a href="{{ route('lessons') }}" class="nav-link link-dark px-2">Обучение</a></li>
+              @endif
             @endauth
-            <li class="nav-item text header_text"><a href="{{ route('public.usl') }}" class="nav-link link-dark px-2">Услуги</a></li>
           </ul>
           <ul class="nav d-flex align-items-center">
             @guest

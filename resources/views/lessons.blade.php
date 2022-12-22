@@ -13,7 +13,6 @@
                 <p class="text">Время: {{ $drivingLesson->time }}</p>
             </div>
         @endforeach
-
         <h2 class="montserrat_light mt-3">Теоретические занятия</h2>
         @foreach ($theoreticalLessons as $theoreticalLesson)
             <div class="content_block p-3 mb-2">

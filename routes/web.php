@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UslugaController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\GroupController;
 
 // Главная страница
 Route::get('/', function () {
@@ -35,7 +36,7 @@ Route::middleware(['user'])->group(function () {
     Route::delete('/home/{app}/delete', [ApplicationController::class, 'destroyApp'])->name('app.destroy')->middleware('can:destroy,app');
 
     // Открыть вкладку обучение
-    Route::get('/home/lessons', [LessonController::class, 'showLessons'])->name('lessons');
+    Route::get('/home/lessons', [LessonController::class, 'showLessons'])->name('lessons')->middleware('verified.user');
 });
 
 // Админ-панель
@@ -73,4 +74,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/app/{app}/delete', [ApplicationController::class, 'showAdminAppDeleteForm'])->name('app.admin.delete');
     // Удаление заявки
     Route::delete('/admin/app/{app}/destroy', [ApplicationController::class, 'destroyAppAdmin'])->name('app.admin.destroy');
+
+    // Раздел группы
+    Route::get('/admin/groups', [GroupController::class, 'showGroups'])->name('admin.groups');
 });
