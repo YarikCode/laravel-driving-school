@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Application;
 use App\Models\Usluga;
+use App\Models\Group;
 use Illuminate\Support\Facades\Auth;
+// use PHPUnit\TextUI\XmlConfiguration\Group;
 
 class ApplicationController extends Controller
 {
@@ -14,7 +16,7 @@ class ApplicationController extends Controller
     }
 
     public function storeApp(Request $request, Usluga $usl){
-        Application::create(['usluga_id' => $usl->id, 'user_id' => Auth::user()->id]);
+        Application::create(['usluga_id' => $usl->id, 'user_id' => Auth::user()->id, 'time' => $request->time, 'date' => $request->date]);
         return redirect()->route('home');
     }
 
@@ -42,11 +44,18 @@ class ApplicationController extends Controller
     }
 
     public function showChangeStatusForm(Application $app){
-        return view('status_app', ['app' => $app]);
+        $groups = Group::latest()->get();
+        return view('status_app', ['app' => $app, 'groups' => $groups]);
     }
 
     public function updateApp(Request $request, Application $app){
         $app->fill(['status' => $request->status]);
+        if($request->group === "NULL"){
+            $app->user()->update(['group_id' => NULL]);
+        }
+        else{
+            $app->user()->update(['group_id' => $request->group]);
+        }
         $app->save();
         return redirect()->route('admin.app');
     }

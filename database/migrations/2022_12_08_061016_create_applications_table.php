@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('usluga_id')->references('id')->on('uslugi')->onDelete('cascade');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('status')->default('Новая заявка');
+            $table->string('time');
+            $table->date('date');
             $table->timestamps();
         });
     }

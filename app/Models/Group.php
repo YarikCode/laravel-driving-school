@@ -13,4 +13,6 @@ class Group extends Model
     public function user(){
         return $this->hasMany(User::class);
     }
+
+    protected $fillable = ['name', 'time'];
 }

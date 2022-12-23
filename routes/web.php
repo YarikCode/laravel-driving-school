@@ -77,4 +77,19 @@ Route::middleware(['admin'])->group(function () {
 
     // Раздел группы
     Route::get('/admin/groups', [GroupController::class, 'showGroups'])->name('admin.groups');
+
+    // Открыть форму создания группы
+    Route::get('/admin/groups/add', [GroupController::class, 'showAddForm'])->name('admin.groups.add');
+    // Сохранить новую группу
+    Route::post('/admin/groups/add', [GroupController::class, 'storeGroup'])->name('admin.groups.store');
+
+    // Открыть форму редактирования группы
+    Route::get('/admin/groups/{group}/edit', [GroupController::class, 'showUpdateForm'])->name('admin.groups.edit');
+    // Редактировать группу
+    Route::patch('/admin/groups/{group}/edit', [GroupController::class, 'updateGroup'])->name('admin.groups.update');
+
+    // Открыть форму удаления группы
+    Route::get('/admin/groups/{group}/delete', [GroupController::class, 'showDeleteForm'])->name('admin.groups.delete');
+    // Удалить группу
+    Route::delete('/admin/groups/{group}/destroy', [GroupController::class, 'destroyGroup'])->name('admin.groups.destroy');
 });

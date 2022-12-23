@@ -30,6 +30,8 @@
                     <p class="text">Номер заявки: {{$application->id}}</p>
                     <p class="text">Услуга: {{$application->usluga->name}}</p>
                     <p class="text">Пользователь: {{$application->user->name}}</p>
+                    <p class="text">Время обучения: {{$application->time}}</p>
+                    <p class="text">Желаемая дата: {{$application->date}}</p>
                     <div class="d-flex">
                         <p class="text pe-1">Статус заявки:</p>
                         @if($application->status === 'Новая заявка')

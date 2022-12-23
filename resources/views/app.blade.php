@@ -3,6 +3,9 @@
 @section('title', 'Заявки')
     
 @section('main')
+    <div class="container content_block p-3 mb-2">
+        <h2 class="montserrat_light">Заявки</h2>
+    </div>
     @foreach ($applications as $application)
         <div class="container content_block p-3 mb-2">
             <div class="d-flex justify-content-between mb-3">
@@ -14,9 +17,11 @@
             </div>
             <h4 class="text mb-4">Заявка на обучение №{{$application->id}}</h4>
             <div>
-                <p class="text">Номер услуги: {{$application->id}}</p>
+                <p class="text">Номер заявки: {{$application->id}}</p>
                 <p class="text">Пользователь: {{$application->user->name}}</p>
                 <p class="text">Наименование услуги: {{$application->usluga->name}}</p>
+                <p class="text">Время обучения: {{$application->time}}</p>
+                <p class="text">Желаемая дата: {{$application->date}}</p>
                 <div class="d-flex">
                     <p class="text pe-1">Статус заявки:</p>
                     @if($application->status === 'Новая заявка')

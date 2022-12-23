@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('number')->nullable();
             $table->string('status')->default('Новый пользователь!');
             $table->rememberToken();
-            $table->foreignId('group_id')->nullable()->references('id')->on('groups');
+            $table->foreignId('group_id')->nullable()->references('id')->on('groups')->onDelete('set null');
             $table->timestamps();
         });
     }

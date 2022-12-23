@@ -4,6 +4,7 @@
     
 @section('main')
     <div class="container content_block p-3 mb-2">
+        <h2 class="montserrat_light">Услуги</h2>
         <nav>
             <ul style="list-style-type: none" class="p-0 m-0 mb-2">
                 <li><a class="btn btn-success" href="{{route('admin.usl.add')}}">Добавить</a></li>

@@ -19,5 +19,5 @@ class Application extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $fillable = ['usluga_id', 'user_id', 'status'];
+    protected $fillable = ['usluga_id', 'user_id', 'status', 'time', 'date'];
 }

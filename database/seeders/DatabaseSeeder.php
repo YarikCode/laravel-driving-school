@@ -82,8 +82,10 @@ class DatabaseSeeder extends Seeder
 
         $users_id = ['1', '2'];
         $uslugi_id = ['1', '2'];
+        $usl_times = ['Дневное обучение', 'Вечернее обучение'];
+        $usl_dates = ['2022.01.01', '2023.01.02'];
         for($i = 0; $i < count($users_id); $i++){
-            Application::create(['user_id' => $users_id[$i], 'usluga_id' => $uslugi_id[$i]]);
+            Application::create(['user_id' => $users_id[$i], 'usluga_id' => $uslugi_id[$i], 'time' => $usl_times[$i], 'date' => $usl_dates[$i]]);
         }
     }
 }
