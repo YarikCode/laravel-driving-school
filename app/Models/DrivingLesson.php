@@ -18,4 +18,10 @@ class DrivingLesson extends Model
     public function instructor(){
         return $this->belongsTo(User::class);
     }
+
+    public function car(){
+        return $this->belongsTo(Car::class);
+    }
+
+    protected $fillable = ['name', 'student_id', 'instructor_id', 'date', 'time', 'car_id'];
 }

@@ -18,4 +18,6 @@ class TheoreticalLesson extends Model
     public function teacher(){
         return $this->belongsTo(User::class);
     }
+
+    protected $fillable = ['name', 'description', 'date', 'time', 'teacher_id', 'group_id'];
 }

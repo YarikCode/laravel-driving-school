@@ -20,6 +20,8 @@
                 <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.usl') }}" class="nav-link text-white px-2 active" aria-current="page">Услуги</a></li>
                 <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.app') }}" class="nav-link text-white px-2 active" aria-current="page">Заявки</a></li>
                 <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.groups') }}" class="nav-link text-white px-2 active" aria-current="page">Группы</a></li>
+                <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.theoretical') }}" class="nav-link text-white px-2 active" aria-current="page">Теория</a></li>
+                <li class="nav-item header_text montserrat_light"><a href="{{ route('admin.driving') }}" class="nav-link text-white px-2 active" aria-current="page">Практика</a></li>
               </ul>
               <ul class="nav d-flex align-items-center">
                 @guest

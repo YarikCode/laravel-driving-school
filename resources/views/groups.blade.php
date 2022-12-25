@@ -31,6 +31,7 @@
                     <th scope="col">ФИО</th>
                     <th scope="col">Почта</th>
                     <th scope="col">Номер</th>
+                    <th scope="col">Действия</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->number }}</td>
+                        <td><a href="{{ Route('admin.user.exclude.form', ['user' => $user->id]) }}">Исключить</a></td>
                     </tr>
                   @endforeach
                 </tbody>

@@ -83,6 +83,11 @@ Route::middleware(['admin'])->group(function () {
     // Сохранить новую группу
     Route::post('/admin/groups/add', [GroupController::class, 'storeGroup'])->name('admin.groups.store');
 
+    // Открыть форму исключения пользователя из группы
+    Route::get('/admin/{user}/exclude', [GroupController::class, 'showFormExcludeUser'])->name('admin.user.exclude.form');
+    // Исключить пользователя из группы
+    Route::post('/admin/{user}/exclude', [GroupController::class, 'excludeUser'])->name('admin.user.exclude');
+
     // Открыть форму редактирования группы
     Route::get('/admin/groups/{group}/edit', [GroupController::class, 'showUpdateForm'])->name('admin.groups.edit');
     // Редактировать группу
@@ -92,4 +97,40 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/groups/{group}/delete', [GroupController::class, 'showDeleteForm'])->name('admin.groups.delete');
     // Удалить группу
     Route::delete('/admin/groups/{group}/destroy', [GroupController::class, 'destroyGroup'])->name('admin.groups.destroy');
+
+    // Раздел теоретические занятия
+    Route::get('/admin/theoreticallessons', [LessonController::class, 'showTheoreticalLessons'])->name('admin.theoretical');
+
+    // Открыть форму добавления занятия
+    Route::get('/admin/theoreticallessons/{group}/add', [LessonController::class, 'showAddTheoreticalLessons'])->name('admin.theoretical.add');
+    // Сохранение занятия
+    Route::post('/admin/theoreticallessons/{group}/add', [LessonController::class, 'storeTheoreticalLessons'])->name('admin.theoretical.store');
+
+    // Открыть форму редактирования занятия
+    Route::get('/admin/theoreticallessons/{lesson}/edit', [LessonController::class, 'showEditTheoreticalLessons'])->name('admin.theoretical.edit');
+    // Редактировать занятие
+    Route::patch('/admin/theoreticallessons/{lesson}/edit', [LessonController::class, 'updateTheoreticalLessons'])->name('admin.theoretical.update');
+
+    // Открыть форму удаления занятия
+    Route::get('/admin/theoreticallessons/{lesson}/delete', [LessonController::class, 'showDeleteTheoreticalLessons'])->name('admin.theoretical.delete');
+    // Удалить занятие
+    Route::delete('/admin/theoreticallessons/{lesson}/delete', [LessonController::class, 'deleteTheoreticalLessons'])->name('admin.theoretical.destroy');
+
+    // Раздел занятия по вождению
+    Route::get('/admin/drivinglessons', [LessonController::class, 'showDrivingLessons'])->name('admin.driving');
+
+    // Открыть форму добавления занятия по вождению
+    Route::get('/admin/drivinglessons/{group}/add', [LessonController::class, 'showAddDrivingLesson'])->name('admin.driving.add');
+    // Сохранить занятие по вождению
+    Route::post('/admin/drivinglessons/add', [LessonController::class, 'storeDrivingLesson'])->name('admin.driving.store');
+
+    // Открыть форму редактирования занятия по вождению
+    Route::get('/admin/drivinglessons/{lesson}/{group}/edit', [LessonController::class, 'showEditDrivingLesson'])->name('admin.driving.edit');
+    // Сохранить изменения
+    Route::patch('/admin/drivinglessons/{lesson}/update', [LessonController::class, 'updateDrivingLesson'])->name('admin.driving.update');
+
+    // Открыть форму удаления занятия по вождению
+    Route::get('/admin/drivinglessons/{lesson}/delete', [LessonController::class, 'showDeleteDrivingLesson'])->name('admin.driving.delete');
+    // Удалить занятие по вождению
+    Route::delete('/admin/drivinglessons/{lesson}/destrou', [LessonController::class, 'destroyDrivingLesson'])->name('admin.driving.destroy');
 });

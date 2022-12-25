@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Group;
+use App\Models\User;
 
 class GroupController extends Controller
 {
@@ -50,6 +51,16 @@ class GroupController extends Controller
 
     public function destroyGroup(Request $request, Group $group){
         $group->delete();
+        return redirect()->route('admin.groups');
+    }
+
+    public function showFormExcludeUser(User $user){
+        return view('exclude_user', ['user' => $user]);
+    }
+
+    public function excludeUser(User $user){
+        $user->group_id = NULL;
+        $user->save();
         return redirect()->route('admin.groups');
     }
 }
