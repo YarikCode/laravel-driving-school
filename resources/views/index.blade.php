@@ -7,20 +7,20 @@
     <!-- Описание при входе -->
     <div class="container p-0 pb-4 d-flex flex-column justify-content-center" style="min-height: 100vh">
         <div class="index_image d-flex align-items-center justify-content-center m-0 p-0" style='background-image: url("/img/xl.jpg");'>
-            <p class="light_text media_title" style="color: white;">Автошкола "Мастер вождения"</p>
+            <h1 class="light_text" style="color: white;">Автошкола "Мастер вождения"</h1>
         </div>
         <div class="row m-0 p-0 pt-2 gap-2">
             <div class="col col_index_image" style='background-image: url("/img/index_image_col_1.jpg")'>
-                <p class="light_text" style="color: white; font-size: 30px">Лучшие автомобили</p>
+                <h2 class="light_text" style="color: white;">Лучшие автомобили</h2>
             </div>
             <div class="col col_index_image" style='background-image: url("/img/index_image_col_3.jpg")'>
-                <p class="light_text" style="color: white; font-size: 30px">Лучшие инструкторы</p>
+                <h2 class="light_text" style="color: white;">Лучшие инструкторы</h2>
             </div>
             <div class="col col_index_image" style='background-image: url("/img/index_image_col_2.jpg")'>
-                <p class="light_text" style="color: white; font-size: 30px">Комфортные условия</p>
+                <h2 class="light_text" style="color: white;">Комфортные условия</h2>
             </div>
             <div class="col col_index_image" style='background-image: url("/img/index_image_col_4.jpg")'>
-                <p class="light_text" style="color: white; font-size: 30px">Рассрочка без переплат</p>
+                <h2 class="light_text" style="color: white;">Рассрочка без переплат</h2>
             </div>
         </div>
     </div>
@@ -28,42 +28,61 @@
     <!-- Качество -->
     <div class="container-fluid d-flex flex-column justify-content-center all_height_image" style='background-image: url("/img/background_image.jpg");'>
         <div class="container d-flex flex-column gap-4">
-            <h1 class="montserrat_light media_tex block_title" style="color: white;">Качество</h1>
-            <p class="montserrat_extraLight media_text" style="color: white; font-size: 20px;">Мы подготовили для вас комфортные условия для обучения и разработали несколько курсов с максимально выгодными ценами.</p>
-            <p class="montserrat_bold media_text" style="color: white; font-size: 18px;">Во все программы включены: полный теоретический курс по ПДД, вождение с инструктором (преодоление препятствий на автодроме и езда по городу), ГСМ, топливо, сбор всей необходимой документации для ГИБДД, предоставление автомобилей на экзамен и сопровождение ученика сотрудниками автошколы.</p>
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <h1 class="montserrat_bold block_title" style="color: white;">Качество</h1>
+                    <h5 class="montserrat_light" style="color: white">Мы подготовили для вас комфортные условия для обучения и разработали несколько курсов с максимально выгодными ценами.</h5>
+                    <h5 class="montserrat_light mb-4" style="color: white;">Во все программы включены: полный теоретический курс по ПДД, вождение с инструктором (преодоление препятствий на автодроме и езда по городу), ГСМ, топливо, сбор всей необходимой документации для ГИБДД, предоставление автомобилей на экзамен и сопровождение ученика сотрудниками автошколы.</h5>
+                    <a href="{{ route('public.usl') }}" class="white_custom_button">Записаться</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Инструкторы -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex flex-column justify-content-center p-5">
+            <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center p-md-5 p-3">
                 <h1 class="montserrat_light block_title">Вас будет учить лучший инструктор</h1>
                 <div class="d-flex flex-column">
-                    <p class="montserrat_bold mb-1" style="font-size: 20px;">Инструкторы европейского уровня</p>
-                    <p class="montserrat_light" style="font-size: 18px;">Наши инструкторы ежегодно подтверждают и повышают свою квалификацию. Сами они проходят обучение у лучших тренеров России и Европы, а также регулярно сдают экзамены по ПДД.</p>
+                    <h5 class="montserrat_bold mb-1">Инструкторы европейского уровня</h5>
+                    <h5 class="montserrat_light">Наши инструкторы ежегодно подтверждают и повышают свою квалификацию. Сами они проходят обучение у лучших тренеров России и Европы, а также регулярно сдают экзамены по ПДД.</h5>
                 </div>
                 <div class="d-flex flex-column">
-                    <p class="montserrat_bold mb-1" style="font-size: 20px;">Строгий деловой дресс-код</p>
-                    <p class="montserrat_light" style="font-size: 18px;">Наши инструкторы одеты в форменную одежду – классические костюмы с галстуком. Форму специально шьют под заказ на фабрике в Стамбуле</p>
+                    <h5 class="montserrat_bold mb-1">Строгий деловой дресс-код</h5>
+                    <h5 class="montserrat_light">Наши инструкторы одеты в форменную одежду – классические костюмы с галстуком. Форму специально шьют под заказ на фабрике в Стамбуле</h5>
                 </div>
                 <div class="d-flex flex-column">
-                    <p class="montserrat_bold mb-1" style="font-size: 20px;">Надёжность и комфорт на дороге</p>
-                    <p class="montserrat_light" style="font-size: 18px;">Инструкторы не «сидят» в мобильном телефоне во время проведения урока. С такими наставниками рядом не страшны даже самые сложные ситуации на дороге. Под их чутким руководством вы уверенно сможете сдать на права</p>
+                    <h5 class="montserrat_bold mb-1">Надёжность и комфорт на дороге</h5>
+                    <h5 class="montserrat_light mb-3">Инструкторы не «сидят» в мобильном телефоне во время проведения урока. С такими наставниками рядом не страшны даже самые сложные ситуации на дороге. Под их чутким руководством вы уверенно сможете сдать на права</h5>
                 </div>
+                <a href="{{ route('public.usl') }}" class="custom_button">Записаться</a>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 all_height_image" style='background-image: url("/img/background_image_2.jpg");'></div>
+            <div class="col-md-6 col-sm-12 all_height_image" style='background-image: url("/img/background_image_2.jpg");'></div>
         </div>
     </div>
 
     <!-- Стоимость обучения -->
-    <div class="container-fluid">
+    <div class="container-fluid about_price">
         <div class="row">
             <div class="col-md-6 col-sm-12 all_height_image" style='background-image: url("/img/background_image_3.jpg");'></div>
-            <div class="col-md-6 col-sm-12 p-5 d-flex flex-column justify-content-center">
+            <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center p-md-5 p-3">
                 <h1 class="montserrat_light">Доступная стоимость обучения в автошколе Ейска</h1>
-                <p class="montserrat_light price_text">Мы ценим не только ваше время, но и деньги. Наши тарифы выгодно отличаются от принятых в других автошколах цен и позволяют значительно экономить. Дешево и качественно на 100% — так можно охарактеризовать наши услуги. Сколько длится обучение в автошколе, зависит от индивидуального графика каждого клиента. А сколько стоит обучение, можно узнать у наших менеджеров, которые перезвонят вам после оформленной вами онлайн-заявки или непосредственно в нашем заведении.<br>Честность, открытость и уважение к клиенту — наши приоритеты. Наша автошкола — одна из немногих в Москве, которая возвращает потраченные средства при неудовлетворительном результате. Не упустите свой шанс стать профессионалом недорого.</p>
+                <h5 class="montserrat_light mb-3">Мы ценим не только ваше время, но и деньги. Наши тарифы выгодно отличаются от принятых в других автошколах цен и позволяют значительно экономить. Дешево и качественно на 100% — так можно охарактеризовать наши услуги. Сколько длится обучение в автошколе, зависит от индивидуального графика каждого клиента. А сколько стоит обучение, можно узнать у наших менеджеров, которые перезвонят вам после оформленной вами онлайн-заявки или непосредственно в нашем заведении.<br>Честность, открытость и уважение к клиенту — наши приоритеты. Наша автошкола — одна из немногих в Москве, которая возвращает потраченные средства при негативном результате. Не упустите свой шанс стать профессионалом недорого.</h5>
+                <a href="{{ route('public.usl') }}" class="custom_button">Записаться</a>
             </div>
+        </div>
+    </div>
+
+    <!-- Автопарк -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center p-md-5 p-3">
+                <h1 class="montserrat_light">У нас собственный автопарк из 13 иномарок</h1>
+                <h5 class="montserrat_light mb-3">В нашей автошколе присутствует собственный автопарк из 13 иномарок. Наш автопарк состоит из большого количества автомобилей, присутствуют как автомобили с механической, так и с автоматической трансмиссией. Каждый автомобиль регулярно проходит техническое обслуживание. При движении в нашем автомобиле вы будете чувствовать себя комфортно и уверено. Все автомобили оборудованы всеми необходимыми техническими средствами, чтобы вы чувствовали себя уверено в любой дорожной ситуации.</h5>
+                <a href="{{ route('public.usl') }}" class="custom_button">Записаться</a>
+            </div>
+            <div class="col-md-6 col-sm-12 all_height_image" style='background-image: url("/img/background_image_4.jpg");'></div>
         </div>
     </div>
 
@@ -77,19 +96,19 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 mb-3">
                 <h4 class="montserrat_bold text-uppercase">теория</h4>
-                <p>Теоретический курс проходит в лекционном формате в классе. Ученики напрямую общаются с преподавателем, это очень интересно и эффективно. На лекциях разбирают правила дорожного движения и их применения в реальной жизни.</p>
+                <p class="montserrat_light">Теоретический курс проходит в лекционном формате в классе. Ученики напрямую общаются с преподавателем, это очень интересно и эффективно. На лекциях разбирают правила дорожного движения и их применения в реальной жизни.</p>
             </div>
             <div class="col-md-6 col-sm-12 mb-3">
                 <h4 class="montserrat_bold text-uppercase">практика</h4>
-                <p>Вождение проходит на автодроме и по городским маршрутам, на специально оборудованном авто, под руководством инструктора с большим стажем. Вы сами выбираете удобное время для практики. Инструктора работают для вас в будние и выходные дни. Вождение самый интересный процесс обучения.</p>
+                <p class="montserrat_light">Вождение проходит на автодроме и по городским маршрутам, на специально оборудованном авто, под руководством инструктора с большим стажем. Вы сами выбираете удобное время для практики. Инструктора работают для вас в будние и выходные дни. Вождение самый интересный процесс обучения.</p>
             </div>
             <div class="col-md-6 col-sm-12 mb-3">
                 <h4 class="montserrat_bold text-uppercase">внутренние экзамены в автошколе</h4>
-                <p>Тест на знание правил ПДД проходит на компьютере. Вождение проходит в городских условиях на дорогах общего пользования. В случае успешной сдачи внутренних экзаменов, вы будете допущены до финальных испытаний в ГИБДД. Экзамены проходят лояльно, их не нужно бояться.</p>
+                <p class="montserrat_light">Тест на знание правил ПДД проходит на компьютере. Вождение проходит в городских условиях на дорогах общего пользования. В случае успешной сдачи внутренних экзаменов, вы будете допущены до финальных испытаний в ГИБДД. Экзамены проходят лояльно, их не нужно бояться.</p>
             </div>
             <div class="col-md-6 col-sm-12 mb-3">
                 <h4 class="montserrat_bold text-uppercase">экзамен в гибдд</h4>
-                <p>После экзаменов в автошколе, вы организованно идете на экзамены в ГИБДД. Куратор и инструктора автошколы все организуют. Всего два этапа, экзамен по теории и практике. После успешной сдачи экзаменов в ГАИ, долгожданные права будут у вас в кармане.</p>
+                <p class="montserrat_light">После экзаменов в автошколе, вы организованно идете на экзамены в ГИБДД. Куратор и инструктора автошколы все организуют. Всего два этапа, экзамен по теории и практике. После успешной сдачи экзаменов в ГАИ, долгожданные права будут у вас в кармане.</p>
             </div>
         </div>
     </div>
@@ -235,7 +254,7 @@
     </div>
 
     <!-- Футер -->
-    <div class="container-fluid footer pt-4 pb-4">
+    <footer class="container-fluid footer pt-4 pb-4">
         <div class="container">
             <h1 class="montserrat_bold" style="color: white">Контакты</h1>
             <div class="row">
@@ -262,6 +281,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
 @endsection('main')
