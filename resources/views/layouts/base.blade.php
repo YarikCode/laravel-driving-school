@@ -41,9 +41,15 @@
                   <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-110px, 34px);">
+                  <li><a class="dropdown-item text" href="{{ route('index') }}">Главная</a></li>
+                  <li><a class="dropdown-item text" href="{{ route('public.usl') }}">Услуги</a></li>
                   <li><a class="dropdown-item text" href="{{ route('home') }}">Личный кабинет</a></li>
-                  <li><a class="dropdown-item text" href="#">Главная</a></li>
-                  <li><a class="dropdown-item text" href="#">Услуги</a></li>
+                  @if (Auth::user()->group_id != null)
+                    <li><a class="dropdown-item text" href="{{ route('lessons') }}">Обучение</a></li>
+                  @endif
+                  @if (Auth::user()->status == "Admin")
+                    <li><a class="dropdown-item text" href="{{ route('admin') }}">Панель администратора</a></li>
+                  @endif
                   <li><hr class="dropdown-divider"></li>
                   <li><form action="{{ route('logout') }}" method="POST">
                     @csrf

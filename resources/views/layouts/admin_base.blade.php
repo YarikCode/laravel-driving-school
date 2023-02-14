@@ -29,6 +29,8 @@
                   <li class="nav-item header_text montserrat_light"><a href="{{ route('register') }}" class="nav-link text-white px-2">Зарегистрироваться</a></li>
                 @endguest
                 @auth
+
+                <!-- 
                   <div class="ps-2 dropdown text-end d-flex align-items-center">
                     <p class="montserrat_light header_text text-white m-0 me-2">{{ Auth::user()->name }}</p>
                     <a href="#" class="d-block text-white text-decoration-none dropdown-toggle show" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="true">
@@ -45,6 +47,31 @@
                       </form></li>
                     </ul>
                   </div>
+                  -->
+
+                  <div class="ps-2 dropdown text-end d-flex align-items-center">
+                    <p class="text header_text m-0 me-2">{{ Auth::user()->name }}</p>
+                    <a href="#" class="d-block text-white text-decoration-none dropdown-toggle show" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="true">
+                      <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-110px, 34px);">
+                      <li><a class="dropdown-item text" href="{{ route('index') }}">Главная</a></li>
+                      <li><a class="dropdown-item text" href="{{ route('public.usl') }}">Услуги</a></li>
+                      <li><a class="dropdown-item text" href="{{ route('home') }}">Личный кабинет</a></li>
+                      @if (Auth::user()->group_id != null)
+                        <li><a class="dropdown-item text" href="{{ route('lessons') }}">Обучение</a></li>
+                      @endif
+                      @if (Auth::user()->status == "Admin")
+                        <li><a class="dropdown-item text" href="{{ route('admin') }}">Панель администратора</a></li>
+                      @endif
+                      <li><hr class="dropdown-divider"></li>
+                      <li><form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <input type="submit" class="dropdown-item text" value="Выйти">
+                      </form></li>
+                    </ul>
+                  </div>
+
                 @endauth
               </ul>
             </div>

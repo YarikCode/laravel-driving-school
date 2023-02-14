@@ -3,10 +3,10 @@
 @section('title', 'Услуги')
     
 @section('main')
-    <div class="container">
+    <div class="container pb-3">
         <h1 class="montserrat_light">Наши услуги</h1>
         @foreach ($uslugi as $usluga)
-            <div class="content_block row p-3 mb-3">
+            <div class="content_block row p-3 mt-3">
                 <div class="col-auto p-0">
                     <img class="img-fluid" width="300" height="300" src="/storage/uploads/{{ $usluga->image }}">
                 </div>

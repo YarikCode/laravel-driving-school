@@ -28,6 +28,22 @@
     src: url("/fonts/Montserrat-ExtraLight.ttf");
 }
 
+.color_1{
+    color: white;
+}
+
+.color_2{
+    color: rgb(142, 90, 166);
+}
+
+.bg_1{
+    background-color: white;
+}
+
+.bg_2{
+    background-color: rgb(142, 90, 166);
+}
+
 .text{
     font-family: Inter-Light;
 }
@@ -153,6 +169,38 @@
 .white_custom_button:hover{
     background-color: rgb(142, 90, 166);
     color: white;
+}
+
+/* Форма заказа */
+.order_block{
+    background-color: rgb(22, 39, 72);
+}
+.order_form{
+    background-color: rgb(216, 80, 74);
+    border-radius: 10px;
+}
+.order_form button{
+    border-radius: 20px;
+    color: rgb(22, 18, 18);
+    background-color: rgb(244, 207, 98);
+    border: none;
+}
+.order_checkbox{
+    font-size: 10px;
+}
+.order_ul{
+    font-size: 10px;
+    margin-right: 0px;
+}
+.dark_block{
+    background-color: rgb(18, 31, 57);
+    width: fit-content;
+}
+.color_usl{
+    color: rgb(224, 232, 250);
+}
+.color_desc{
+    color: rgb(156, 165, 189);
 }
 
 @media (max-width: 767.98px){ 
