@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('main')
-    <div class="container">
+    <div class="container pb-5">
         <h1 class="montserrat_light">Мой профиль</h1>
         <div class="content_block p-3 mb-3">
             <div class="row justify-content-start">

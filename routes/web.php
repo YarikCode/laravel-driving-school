@@ -14,6 +14,11 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+// О нас
+Route::get('/about', function () {
+    return view('about_us');
+})->name('about');
+
 // Услуги
 Route::get('/usl', [UslugaController::class, 'showPublicUsl'])->name('public.usl');
 

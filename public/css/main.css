@@ -44,6 +44,10 @@
     background-color: rgb(142, 90, 166);
 }
 
+.main_content{
+    min-height: 100vh;
+}
+
 .text{
     font-family: Inter-Light;
 }

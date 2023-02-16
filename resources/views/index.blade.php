@@ -240,7 +240,7 @@
     </div>
 
     <!-- Расположение -->
-    <div class="container mb-5">
+    <div class="container pb-5">
         <div class="row">
             <div class="col-12">
                 <h1 class="montserrat_light">Расположение автошколы</h1>
@@ -253,34 +253,6 @@
         </div>
     </div>
 
-    <!-- Футер -->
-    <footer class="container-fluid footer pt-4 pb-4">
-        <div class="container">
-            <h1 class="montserrat_bold" style="color: white">Контакты</h1>
-            <div class="row">
-                <div class="col">
-                    <div class="mb-4">
-                        <p class="montserrat_light mb-1" style="color: gray">ТЕЛЕФОН:</p>
-                        <p class="montserrat_light" style="color: white">+7 (964) 922-38-71</p>
-                    </div>
-                    <div class="mb-4">
-                        <p class="montserrat_light mb-1" style="color: gray">ЭЛ. АДРЕС:</p>
-                        <p class="montserrat_light" style="color: white">drivermaster@mail.ru</p>
-                    </div>
-                    <div class="mb-4">
-                        <p class="montserrat_light mb-1" style="color: gray">ОТДЕЛ ПРОДАЖ:</p>
-                        <p class="montserrat_light" style="color: white">г. Ейск, ул. Мичурина, 22</p>
-                    </div>
-                </div>
-                <div class="col">
-                        <div class="mb-4">
-                            <p class="montserrat_light mb-1" style="color: gray">ГРАФИК РАБОТЫ:</p>
-                            <p class="montserrat_light" style="color: white">пн-пт: 8:00 - 18:00 <br> сб: 9:00 - 17:00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
 
 @endsection('main')

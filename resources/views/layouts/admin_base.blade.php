@@ -57,6 +57,7 @@
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-110px, 34px);">
                       <li><a class="dropdown-item text" href="{{ route('index') }}">Главная</a></li>
                       <li><a class="dropdown-item text" href="{{ route('public.usl') }}">Услуги</a></li>
+                      <li><a class="dropdown-item text" href="{{ route('about') }}">О нас</a></li>
                       <li><a class="dropdown-item text" href="{{ route('home') }}">Личный кабинет</a></li>
                       @if (Auth::user()->group_id != null)
                         <li><a class="dropdown-item text" href="{{ route('lessons') }}">Обучение</a></li>

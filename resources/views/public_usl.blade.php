@@ -3,7 +3,7 @@
 @section('title', 'Услуги')
     
 @section('main')
-    <div class="container pb-3">
+    <div class="container ps-4 pe-4 pb-5">
         <h1 class="montserrat_light">Наши услуги</h1>
         @foreach ($uslugi as $usluga)
             <div class="content_block row p-3 mt-3">

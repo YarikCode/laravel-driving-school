@@ -22,6 +22,7 @@
           <ul class="nav me-auto">
             <li class="nav-item text header_text"><a href="{{ route('index') }}" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
             <li class="nav-item text header_text"><a href="{{ route('public.usl') }}" class="nav-link link-dark px-2">Услуги</a></li>
+            <li class="nav-item text header_text"><a href="{{ route('about') }}" class="nav-link link-dark px-2">О нас</a></li>
             @auth
               <li class="nav-item text header_text"><a href="{{ route('home') }}" class="nav-link link-dark px-2">Личный кабинет</a></li>
               @if (Auth::user()->group_id != null)
@@ -43,6 +44,7 @@
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" data-popper-placement="bottom-end" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-110px, 34px);">
                   <li><a class="dropdown-item text" href="{{ route('index') }}">Главная</a></li>
                   <li><a class="dropdown-item text" href="{{ route('public.usl') }}">Услуги</a></li>
+                  <li><a class="dropdown-item text" href="{{ route('about') }}">О нас</a></li>
                   <li><a class="dropdown-item text" href="{{ route('home') }}">Личный кабинет</a></li>
                   @if (Auth::user()->group_id != null)
                     <li><a class="dropdown-item text" href="{{ route('lessons') }}">Обучение</a></li>
@@ -64,8 +66,39 @@
   </header>
   
   <!-- Основной контент -->
-  <div class="content pt-3">
+  <div class="content pt-3 main_content">
       @yield('main')
   </div>
+
+  <!-- Футер -->
+  <footer class="container-fluid footer pt-4 pb-4">
+    <div class="container">
+        <h1 class="montserrat_bold" style="color: white">Контакты</h1>
+        <div class="row">
+            <div class="col">
+                <div class="mb-4">
+                    <p class="montserrat_light mb-1" style="color: gray">ТЕЛЕФОН:</p>
+                    <p class="montserrat_light" style="color: white">+7 (964) 922-38-71</p>
+                </div>
+                <div class="mb-4">
+                    <p class="montserrat_light mb-1" style="color: gray">ЭЛ. АДРЕС:</p>
+                    <p class="montserrat_light" style="color: white">drivermaster@mail.ru</p>
+                </div>
+                <div class="mb-4">
+                    <p class="montserrat_light mb-1" style="color: gray">ОТДЕЛ ПРОДАЖ:</p>
+                    <p class="montserrat_light" style="color: white">г. Ейск, ул. Мичурина, 22</p>
+                </div>
+            </div>
+            <div class="col">
+                    <div class="mb-4">
+                        <p class="montserrat_light mb-1" style="color: gray">ГРАФИК РАБОТЫ:</p>
+                        <p class="montserrat_light" style="color: white">пн-пт: 8:00 - 18:00 <br> сб: 9:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
