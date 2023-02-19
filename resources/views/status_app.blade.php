@@ -10,6 +10,9 @@
         <p class="text">Номер заявки: {{ $app->id }}</p>
         <p class="text">Услуга: {{ $app->usluga->name }}</p>
         <p class="text">Пользователь: {{ $app->user->name }}</p>
+        <p class="text">Время обучения: {{ $app->time }}</p>
+        <p class="text">Номер пользователя: {{ $app->user->number }}</p>
+        <p class="text">Желаемая дата: {{ $app->date }}</p>
         <div class="row ps-3">
             <div class="col-auto form-check form-check-inline">
                 <input @if ($app->status === "Новая заявка") checked @endif class="form-check-input" type="radio" name="status" value="Новая заявка">
@@ -33,6 +36,6 @@
                 @endforeach
             </select>
         </div>
-        <input type="submit" class="btn btn-success" value="Сохранить">
+        <input type="submit" class="btn btn-success mb-2" value="Сохранить">
     </form>
 @endsection

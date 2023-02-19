@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Models\Usluga;
 use App\Models\Group;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 // use PHPUnit\TextUI\XmlConfiguration\Group;
 
 class ApplicationController extends Controller
@@ -16,7 +17,13 @@ class ApplicationController extends Controller
     }
 
     public function storeApp(Request $request, Usluga $usl){
+        // Создание новой заявки
         Application::create(['usluga_id' => $usl->id, 'user_id' => Auth::user()->id, 'time' => $request->time, 'date' => $request->date]);
+        // Обновление номера телефона пользователя
+        DB::table('users')
+        ->where('id', '=', Auth::user()->id)
+        ->update(['number' => $request->phone_number]);
+        // Редирект на домашнюю страницу
         return redirect()->route('home');
     }
 

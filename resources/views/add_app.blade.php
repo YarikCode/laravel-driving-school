@@ -10,7 +10,6 @@
                 <h2 class="montserrat_bold">Оставьте заявку прямо сейчас</h2>
                 <h5 class="montserrat_light color_usl">Услуга: {{$usl->name}}</h5>
                 <p class="montserrat_light color_desc">{{$usl->description}}</p>
-                
             </div>
             <form class="col-xl-3 col-lg-4 col-md-5 col-sm-9 col-12 order_form d-flex flex-column p-4" action="{{route('app.store', ['usl' => $usl->id])}}" method="POST">
                     @csrf
@@ -22,9 +21,13 @@
                             <option value="Вечернее обучение">Вечернее обучение</option>
                         </select> 
                     </div>
-                    <div class="form-group montserrat_light color_1">
+                    <div class="form-group montserrat_light color_1 mb-2">
                         <label for="exampleInputEmail1" class="mb-2">Выберите желаемую дату:</label>
                         <input type="date" class="form-control" id="exampleInputEmail1" name="date" required>
+                    </div>
+                    <div class="form-group montserrat_light color_1">
+                        <label for="exampleInputEmail1" class="mb-2">Введите номер телефона:</label>
+                        <input type="tel" class="form-control" id="phone-mask" name="phone_number" placeholder="+7(000)000-00-00" required>
                     </div>
                     <button type="submit" class="btn btn-primary montserrat_bold mt-4 mb-3">Отправить заявку</button>
                     <div class="form-check d-flex align-items-center m-0">
@@ -39,4 +42,12 @@
         </div>
     </div>
 
+    <!-- Код для создания маски номера телефона -->
+    <script src="https://unpkg.com/imask"></script>
+    <script>
+        var phoneMask = IMask(
+        document.getElementById('phone-mask'), {
+            mask: '+{7}(000)000-00-00'
+        });
+    </script>
 @endsection

@@ -80,7 +80,7 @@
     </header>
     
     <!-- Основной контент -->
-    <div class="content pt-3">
+    <div class="content pt-3 pb-2">
         @yield('main')
     </div>
 </body>
