@@ -138,4 +138,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/drivinglessons/{lesson}/delete', [LessonController::class, 'showDeleteDrivingLesson'])->name('admin.driving.delete');
     // Удалить занятие по вождению
     Route::delete('/admin/drivinglessons/{lesson}/destrou', [LessonController::class, 'destroyDrivingLesson'])->name('admin.driving.destroy');
+
+    // Обновить список заявок
+    Route::get('/admin/updateApplications', [ApplicationController::class, 'updateApplications'])->name('application.update');
 });

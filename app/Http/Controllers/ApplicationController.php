@@ -46,8 +46,31 @@ class ApplicationController extends Controller
     }
 
     public function showAllAds(){
-        $context = ['applications' => Application::latest()->get()];
+        // Выборка первых 50 заявок
+        $context = ['applications' => Application::latest()->where('status', 'Новая заявка')->limit(50)->get(), 'onlynew' => "on"];
+        // Загрузка вида
         return view('app', $context); 
+    }
+    
+    // Функция обновления списка заявок
+    public function updateApplications(Request $request){
+        if($request->onlyNew == "on"){
+            if($request->appID == ""){
+                $context = ['applications' => Application::latest()->where('status', 'Новая заявка')->limit(50)->get(), 'onlynew' => "on"];
+            }
+            else{
+                $context = ['applications' => Application::latest()->where('status', 'Новая заявка')->where('id', $request->appID)->limit(50)->get(), 'id' => $request->appID, 'onlynew' => "on"];
+            }
+        }
+        else{
+            if($request->appID == ""){
+                $context = ['applications' => Application::latest()->limit(50)->get()];
+            }
+            else{
+                $context = ['applications' => Application::latest()->where('id', $request->appID)->limit(50)->get(), 'id' => $request->appID];
+            }
+        }
+        return view('app', $context);
     }
 
     public function showChangeStatusForm(Application $app){
