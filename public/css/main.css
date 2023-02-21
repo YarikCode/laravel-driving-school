@@ -46,6 +46,7 @@
 
 .main_content{
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .text{
@@ -100,6 +101,7 @@
 
 .footer{
     background-color: rgb(34, 34, 34);
+    overflow-x: hidden;
 }
 
 .content{
@@ -109,6 +111,7 @@
 
 .content_block{
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
 }
 
 .home_user_image{
@@ -205,6 +208,15 @@
 }
 .color_desc{
     color: rgb(156, 165, 189);
+}
+
+/* Теоретические занятия */
+.theoretical_image{
+    max-width: 42px;
+    max-height: 42px;
+}
+.file_div{
+    word-wrap: break-word;
 }
 
 @media (max-width: 767.98px){ 

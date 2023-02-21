@@ -30,6 +30,12 @@
                     <p class="text">Преподаватель: {{ $theoreticalLesson->teacher->name }}</p>
                     <p class="text">Дата: {{ $theoreticalLesson->date}}</p>
                     <p class="text mb-0">Время: {{ $theoreticalLesson->time }}</p>
+                    @if ($theoreticalLesson->file != null)
+                        <div class="d-flex align-items-center mt-2">
+                            <img src="/img/pdf_document.png" alt="Пдф документ" class="theoretical_image me-2">
+                            <a href="/storage/lessonFiles/{{ $theoreticalLesson->file }}">{{$theoreticalLesson->file}}</a>
+                        </div>
+                    @endif
                 </div>
             @endforeach
         @endif

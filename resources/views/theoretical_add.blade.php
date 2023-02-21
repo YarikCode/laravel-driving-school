@@ -50,6 +50,16 @@
                 @endforeach
             </select>
         </div>
+        <div class="mb-2">
+            <label for="exampleInputPassword1">Дополнительный материал</label>
+            <input type="file" class="form-control @error('file') is-invalid @enderror" id="exampleInputPassword1" placeholder="Выберите файл" name="file" value="{{ old('file') }}">
+            @error('file')
+                <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            <small id="emailHelp" class="form-text text-muted">Выберите 1 файл формата ".pdf"</small>
+        </div>
         <button type="submit" class="btn btn-primary">Добавить</button>    
     </form>
 @endsection

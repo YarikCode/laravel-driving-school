@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group montserrat_light color_1 mb-2">
                         <label for="exampleInputEmail1" class="mb-2">Выберите желаемую дату:</label>
-                        <input type="date" class="form-control" id="exampleInputEmail1" name="date" required>
+                        <input type="date" class="form-control" id="exampleInputEmail1" name="date" max="2030-01-01" min="2023-01-01" required>
                     </div>
                     <div class="form-group montserrat_light color_1">
                         <label for="exampleInputEmail1" class="mb-2">Введите номер телефона:</label>

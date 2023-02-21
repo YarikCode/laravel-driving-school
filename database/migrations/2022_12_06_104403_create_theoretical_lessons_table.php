@@ -21,6 +21,7 @@ return new class extends Migration
             $table->time('time');
             $table->foreignId('teacher_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('group_id')->references('id')->on('groups')->onDelete('cascade');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,7 @@ use App\Models\Group;
 use App\Models\User;
 use App\Models\Car;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class LessonController extends Controller
 {
@@ -17,14 +18,16 @@ class LessonController extends Controller
         'description' => 'required|max:255',
         'date' => 'required|date',
         'time' => 'required', 
-        'teacher' => 'required'
+        'teacher' => 'required',
+        'file' => 'mimes:pdf'
     ];
 
     private const THEORETICAL_ERROR_MESSAGES = [
         'required' => 'Заполните это поле',
         'max' => 'Значение не должно быть длиннее :max символов',
         'numeric' => 'Введите число',
-        'date' => 'Введите дату'
+        'date' => 'Введите дату',
+        'mimes' => 'Файл данного формата не поддерживается'
     ];
 
     private const DRIVING_VALIDATOR = [
@@ -59,9 +62,23 @@ class LessonController extends Controller
         return view('theoretical_add', ['group' => $group, 'teachers' => $teachers]);
     }
 
+    // Функция добавления нового теоретического занятия
     public function storeTheoreticalLessons(Request $request, Group $group){
+        // Правила валидации
         $validated = $request->validate(self::THEORETICAL_VALIDATOR, self::THEORETICAL_ERROR_MESSAGES);
-        TheoreticalLesson::create(['name' => $validated['name'], 'description' => $validated['description'], 'date' => $validated['date'], 'time' => $validated['time'], 'teacher_id' => $validated['teacher'], 'group_id' => $group->id]);
+        // Проверка наличия файла
+        if($request->file != null){
+            // Работа с файлом
+            $file = $request->file('file');
+            $filename = time()."_". preg_replace('/\s+/', '_', strtolower($file->getClientOriginalName()));
+            $tmp = $file->storeAs('lessonFiles', $filename, 'public');
+            // Запись в базу данных
+            TheoreticalLesson::create(['name' => $validated['name'], 'description' => $validated['description'], 'date' => $validated['date'], 'time' => $validated['time'], 'teacher_id' => $validated['teacher'], 'group_id' => $group->id, 'file' => $filename]);
+        }
+        else{
+            TheoreticalLesson::create(['name' => $validated['name'], 'description' => $validated['description'], 'date' => $validated['date'], 'time' => $validated['time'], 'teacher_id' => $validated['teacher'], 'group_id' => $group->id]);
+        }
+        // Редирект на страницу занятий
         return redirect()->route('admin.theoretical');
     }
 
@@ -70,22 +87,44 @@ class LessonController extends Controller
         return view('theoretical_edit', ['lesson' => $lesson, 'teachers' => $teachers]);
     }
 
+    // Функция обновления теоретического занятия
     public function updateTheoreticalLessons(Request $request, TheoreticalLesson $lesson){
         $validated = $request->validate(self::THEORETICAL_VALIDATOR, self::THEORETICAL_ERROR_MESSAGES);
-        $lesson->fill(['name' => $validated['name'], 
+        // Проверка наличия файла
+        if($request->file != null){
+            // Удаление старого файла
+            Storage::delete('public/lessonFiles/' . $lesson->file);
+            // Работа с файлом
+            $file = $request->file('file');
+            $filename = time()."_". preg_replace('/\s+/', '_', strtolower($file->getClientOriginalName()));
+            $tmp = $file->storeAs('lessonFiles', $filename, 'public');
+            // Обновление данных
+            $lesson->fill(['name' => $validated['name'], 
                     'description' => $validated['description'],
                     'date' => $validated['date'],
                     'time' => $validated['time'],
-                    'teacher' => $validated['teacher']]);
+                    'teacher' => $validated['teacher'],
+                    'file' => $filename]);
+        }
+        else{
+            $lesson->fill(['name' => $validated['name'], 
+            'description' => $validated['description'],
+            'date' => $validated['date'],
+            'time' => $validated['time'],
+            'teacher' => $validated['teacher']]);
+        }
         $lesson->save();
-                return redirect()->route('admin.theoretical');
+        return redirect()->route('admin.theoretical');
     }
 
     public function showDeleteTheoreticalLessons(TheoreticalLesson $lesson){
         return view('theoretical_delete', ['lesson' => $lesson]);
     }
 
+    // Функция удаления теоретического занятия
     public function deleteTheoreticalLessons(TheoreticalLesson $lesson){
+        // Удаление файла
+        Storage::delete('public/lessonFiles/' . $lesson->file);
         $lesson->delete();
         return redirect()->route('admin.theoretical');
     }

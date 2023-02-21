@@ -19,5 +19,5 @@ class TheoreticalLesson extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $fillable = ['name', 'description', 'date', 'time', 'teacher_id', 'group_id'];
+    protected $fillable = ['name', 'description', 'date', 'time', 'teacher_id', 'group_id', 'file'];
 }
