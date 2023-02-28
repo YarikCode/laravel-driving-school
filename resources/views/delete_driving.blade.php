@@ -11,8 +11,8 @@
         <p class="text mb-2">Ученик: {{$lesson->student->name}}</p>
         <p class="text mb-2">Инструктор: {{$lesson->instructor->name}}</p>
         <p class="text mb-2">Дни недели: {{$lesson->date}}</p>
-        <p class="text">Время: {{$lesson->time}}</p>
-        <p class="text">Автомобиль: {{$lesson->car->name}}</p>
-        <button type="submit" class="btn btn-primary">Удалить</button>
+        <p class="text mb-2">Время: {{$lesson->time}}</p>
+        <p class="text mb-4">Автомобиль: {{$lesson->car->name}}</p>
+        <button type="submit" class="btn btn-danger">Удалить</button>
     </form>
 @endsection

@@ -8,7 +8,7 @@
         @method('DELETE')
         <h2 class="text mb-4">Удаление заявки</h2>
         <p class="text mb-2">Пользователь: {{Auth::user()->name}}</p>
-        <p class="text">Услуга: {{$app->usluga->name}}</p>
-        <button type="submit" class="btn btn-primary">Удалить</button>
+        <p class="text mb-4">Услуга: {{$app->usluga->name}}</p>
+        <button type="submit" class="btn btn-danger">Удалить</button>
     </form>
 @endsection

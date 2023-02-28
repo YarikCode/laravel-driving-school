@@ -28,6 +28,6 @@
                 @endif
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Добавить</button>    
+        <button type="submit" class="btn btn-primary">Редактировать</button>    
     </form>
 @endsection

@@ -10,6 +10,6 @@
         <p class="text mb-2">Номер группы: {{$group->id}}</p>
         <p class="text mb-2">Название: {{$group->name}}</p>
         <p class="text">Время обучения: {{$group->time}}</p>
-        <button type="submit" class="btn btn-primary">Удалить</button>
+        <button type="submit" class="btn btn-danger">Удалить</button>
     </form>
 @endsection

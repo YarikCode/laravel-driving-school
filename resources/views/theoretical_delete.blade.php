@@ -7,12 +7,12 @@
         @csrf
         @method('DELETE')
         <h2 class="text mb-4">Удаление теоретического занятия</h2>
-        <p class="text">Номер занятия: {{$lesson->id}}</p>
-        <p class="text">Название: {{$lesson->name}}</p>
-        <p class="text">Описание: {{$lesson->description}}</p>
-        <p class="text">Дата: {{$lesson->date}}</p>
-        <p class="text">Время: {{$lesson->time}}</p>
-        <p class="text mb-2">Преподаватель: {{$lesson->teacher->name}}</p>
-        <button type="submit" class="btn btn-primary">Удалить</button>
+        <p class="text mb-2">Номер занятия: {{$lesson->id}}</p>
+        <p class="text mb-2">Название: {{$lesson->name}}</p>
+        <p class="text mb-2">Описание: {{$lesson->description}}</p>
+        <p class="text mb-2">Дата: {{$lesson->date}}</p>
+        <p class="text mb-2">Время: {{$lesson->time}}</p>
+        <p class="text mb-4">Преподаватель: {{$lesson->teacher->name}}</p>
+        <button type="submit" class="btn btn-danger">Удалить</button>
     </form>
 @endsection
