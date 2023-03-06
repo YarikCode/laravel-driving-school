@@ -94,6 +94,20 @@
                         <p class="montserrat_light mb-1" style="color: gray">ГРАФИК РАБОТЫ:</p>
                         <p class="montserrat_light" style="color: white">пн-пт: 8:00 - 18:00 <br> сб: 9:00 - 17:00</p>
                     </div>
+                    <div class="mb-4">
+                      <p class="montserrat_light mb-1" style="color: gray">СОЦИАЛЬНЫЕ СЕТИ:</p>
+                      <div class="d-flex">
+                        <a href="https://vk.com/" target="_blank" class="me-2">
+                          <img src="/img/vkontakte_icon.png" alt="Вконтакте">
+                        </a>
+                        <a href="https://vk.com/" target="_blank" class="me-2">
+                          <img src="/img/whatsapp_icon.png" alt="WhatsApp">
+                        </a>
+                        <a href="https://vk.com/" target="_blank" class="me-2">
+                          <img src="/img/instagram_icon.png" alt="Instagram">
+                        </a>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
